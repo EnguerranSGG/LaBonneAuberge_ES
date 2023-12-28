@@ -1,0 +1,12 @@
+.carousel-item img {
+    transition: filter 0.5s ease; /* Ajout de la transition pour le filtre de luminosité */
+  } 
+  
+  .carousel-item:hover img {
+    filter: brightness(50%);
+  }
+
+  .carousel-inner h2 p {
+    display: flex;
+    text-align: right;
+  }
