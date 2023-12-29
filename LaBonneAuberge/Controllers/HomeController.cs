@@ -17,13 +17,15 @@ namespace LaBonneAuberge.Controllers
         {
             return View();
         }
-
+        public IActionResult Presentation()
+        {
+            return View();
+        }
         public IActionResult Privacy()
         {
             return View();
         }
-
-        public IActionResult Presentation()
+          public IActionResult Contact()
         {
             return View();
         }

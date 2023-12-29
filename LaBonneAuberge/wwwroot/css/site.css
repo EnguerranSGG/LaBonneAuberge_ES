@@ -19,10 +19,15 @@ html {
 
 body {
   margin-bottom: 60px;
+ 
+ 
+}
+.borderSimple{
+  border: 1px solid rgb(226, 192, 161);
+ 
 }
 
-main {
-    /* background-color: #f3e3d3 ; */
-    
-}
+.marginContact{
+  margin-right: 10vw;
 
+}
