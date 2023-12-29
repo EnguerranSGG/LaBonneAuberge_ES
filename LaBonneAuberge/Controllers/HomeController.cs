@@ -11,11 +11,11 @@ namespace LaBonneAuberge.Controllers
         private readonly ILogger<HomeController> _logger;
         private readonly LaBonneAubergeContext _context;
 
-        public HomeController(ILogger<HomeController> logger)
+       public HomeController(ILogger<HomeController> logger, LaBonneAubergeContext context)
         {
             _logger = logger;
+            _context = context;
         }
-
         public IActionResult Index()
         {
             return View();
