@@ -30,6 +30,16 @@ namespace LaBonneAuberge.Controllers
             return View();
         }
 
+        public IActionResult Presentation()
+        {
+            return View();
+        }
+
+        public IActionResult Avis()
+        {
+            return View();
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
