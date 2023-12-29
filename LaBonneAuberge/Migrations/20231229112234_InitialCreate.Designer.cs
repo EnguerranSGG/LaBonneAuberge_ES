@@ -2,6 +2,7 @@
 using LaBonneAuberge.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -9,9 +10,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LaBonneAuberge.Migrations
 {
     [DbContext(typeof(LaBonneAubergeContext))]
-    partial class LaBonneAubergeContextModelSnapshot : ModelSnapshot
+    [Migration("20231229112234_InitialCreate")]
+    partial class InitialCreate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.0");
@@ -40,26 +43,6 @@ namespace LaBonneAuberge.Migrations
                     b.HasKey("Id_FeedBack");
 
                     b.ToTable("FeedBacks");
-                });
-
-                            modelBuilder.Entity("LaBonneAuberge.Models.TeamList", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("Age")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("Job")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("TeamLists");
                 });
 #pragma warning restore 612, 618
         }

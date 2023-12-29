@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using LaBonneAuberge.Data;
 using Microsoft.EntityFrameworkCore;
+using LaBonneAuberge.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace LaBonneAuberge.Controllers
 {
@@ -35,9 +37,10 @@ namespace LaBonneAuberge.Controllers
             return View(TeamList);
         }
 
-        public IActionResult Avis()
+        public async Task<IActionResult> Avis()
         {
-            return View();
+            var feedBacks = await _context.FeedBacks.ToListAsync();
+            return View(feedBacks);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
