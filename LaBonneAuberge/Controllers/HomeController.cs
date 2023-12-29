@@ -1,12 +1,17 @@
+using LaBonneAuberge.Migrations;
 using LaBonneAuberge.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using Microsoft.EntityFrameworkCore;
+using LaBonneAuberge.Data;
 
 namespace LaBonneAuberge.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+
+        private readonly LaBonneAubergeContext _context;
 
         public HomeController(ILogger<HomeController> logger)
         {
@@ -33,6 +38,12 @@ namespace LaBonneAuberge.Controllers
         public IActionResult Avis()
         {
             return View();
+        }
+
+        public async Task<IActionResult> Menu()
+        {
+            var Menu = await _context.Menus.ToListAsync();
+            return View(Menu);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

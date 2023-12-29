@@ -11,6 +11,8 @@ namespace LaBonneAuberge.Migrations
     [DbContext(typeof(LaBonneAubergeContext))]
     partial class LaBonneAubergeContextModelSnapshot : ModelSnapshot
     {
+        public object Menus { get; internal set; }
+
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
