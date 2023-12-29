@@ -1,12 +1,15 @@
 using LaBonneAuberge.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using LaBonneAuberge.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace LaBonneAuberge.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly LaBonneAubergeContext _context;
 
         public HomeController(ILogger<HomeController> logger)
         {
@@ -25,9 +28,11 @@ namespace LaBonneAuberge.Controllers
         {
             return View();
         }
-          public IActionResult Contact()
+        
+        public async Task<IActionResult> Contact()
         {
-            return View();
+            var TeamList = await _context.TeamLists.ToListAsync();
+            return View(TeamList);
         }
 
         public IActionResult Avis()
