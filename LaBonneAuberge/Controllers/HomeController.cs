@@ -1,6 +1,8 @@
 using LaBonneAuberge.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using LaBonneAuberge.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace LaBonneAuberge.Controllers
 {
@@ -8,9 +10,12 @@ namespace LaBonneAuberge.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        private readonly LaBonneAubergeContext _context;
+
+        public HomeController(ILogger<HomeController> logger, LaBonneAubergeContext context)
         {
             _logger = logger;
+            _context = context;
         }
 
         public IActionResult Index()
@@ -30,9 +35,10 @@ namespace LaBonneAuberge.Controllers
             return View();
         }
 
-        public IActionResult Avis()
+        public async Task<IActionResult> Avis()
         {
-            return View();
+            var feedBacks = await _context.FeedBacks.ToListAsync();
+            return View(feedBacks);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

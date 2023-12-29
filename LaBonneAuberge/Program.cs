@@ -1,4 +1,12 @@
+using LaBonneAuberge.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
+
+
+builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<LaBonneAubergeContext>(options=>
+options.UseSqlite(builder.Configuration.GetConnectionString("LaBonneAubergeContext")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
