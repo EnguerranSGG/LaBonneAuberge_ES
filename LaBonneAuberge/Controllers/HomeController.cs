@@ -17,7 +17,10 @@ namespace LaBonneAuberge.Controllers
         {
             return View();
         }
-
+        public IActionResult Presentation()
+        {
+            return View();
+        }
         public IActionResult Privacy()
         {
             return View();
