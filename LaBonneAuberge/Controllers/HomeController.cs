@@ -41,7 +41,7 @@ namespace LaBonneAuberge.Controllers
             return View();
         }
 
-        public async Task<IActionResult> Menu()
+        public async Task<IActionResult> Carte()
         {
             var Menu = await _context.Menus.ToListAsync();
             return View(Menu);
