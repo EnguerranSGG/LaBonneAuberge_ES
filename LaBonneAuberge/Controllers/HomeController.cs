@@ -1,10 +1,9 @@
+using LaBonneAuberge.Migrations;
 using LaBonneAuberge.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
-using LaBonneAuberge.Data;
 using Microsoft.EntityFrameworkCore;
 using LaBonneAuberge.Data;
-using Microsoft.EntityFrameworkCore;
 
 namespace LaBonneAuberge.Controllers
 {
@@ -13,7 +12,9 @@ namespace LaBonneAuberge.Controllers
         private readonly ILogger<HomeController> _logger;
         private readonly LaBonneAubergeContext _context;
 
-       public HomeController(ILogger<HomeController> logger, LaBonneAubergeContext context)
+        private readonly LaBonneAubergeContext _context;
+
+        public HomeController(ILogger<HomeController> logger, LaBonneAubergeContext context)
         {
             _logger = logger;
             _context = context;
@@ -41,6 +42,12 @@ namespace LaBonneAuberge.Controllers
         {
             var feedBacks = await _context.FeedBacks.ToListAsync();
             return View(feedBacks);
+        }
+
+        public async Task<IActionResult> Carte()
+        {
+            var Menu = await _context.Menus.ToListAsync();
+            return View(Menu);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

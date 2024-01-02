@@ -2,6 +2,7 @@
 using LaBonneAuberge.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -9,11 +10,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LaBonneAuberge.Migrations
 {
     [DbContext(typeof(LaBonneAubergeContext))]
-    partial class LaBonneAubergeContextModelSnapshot : ModelSnapshot
+    [Migration("20231229130822_Menu")]
+    partial class Menu
     {
-        public object Menus { get; internal set; }
-
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.0");

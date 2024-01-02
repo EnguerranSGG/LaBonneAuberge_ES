@@ -1,0 +1,23 @@
+@{
+    ViewData["Title"] = "Carte";
+}
+
+@model IEnumerable<LaBonneAuberge.Models.Menu>
+ <h2>Carte</h2>
+ <table>
+ <tr>
+ <th>ID</th>
+ <th>Nom</th>
+ <th>Description</th>
+ <th>Prix</th>
+ </tr>
+ @foreach (var task in Model) {
+ <tr>
+ <td>@task.Id</td>
+ <td>@task.Name</td>
+ <td>@task.Description</td>
+ <td>@task.Price</td>
+ </tr>
+ }
+ </table>
+ </LaBonneAuberge.Models.Task>

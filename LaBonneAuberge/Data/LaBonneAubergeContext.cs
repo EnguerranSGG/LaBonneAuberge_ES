@@ -8,7 +8,8 @@ namespace LaBonneAuberge.Data
 base(options)
  {
  }
-  public DbSet<FeedBackModel> FeedBacks { get; set; }
+  public DbSet<Menu> Menus { get; set; } = default!;
+    public DbSet<FeedBackModel> FeedBacks { get; set; }
   public DbSet<TeamList> TeamLists { get; set; }
 //  public DbSet<Category> Categories { get; set; }
  }
