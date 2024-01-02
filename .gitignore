@@ -485,3 +485,5 @@ $RECYCLE.BIN/
 
 #Ignore Database
 *.db
+*.db-shm
+*.db-wal
