@@ -29,7 +29,7 @@ namespace LaBonneAuberge.Controllers
         {
             return View();
         }
-        
+
         public async Task<IActionResult> Contact()
         {
             var TeamList = await _context.TeamLists.ToListAsync();
