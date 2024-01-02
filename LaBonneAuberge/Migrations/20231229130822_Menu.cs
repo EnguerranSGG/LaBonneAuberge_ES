@@ -5,25 +5,24 @@
 namespace LaBonneAuberge.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreate : Migration
+    public partial class Menu : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "FeedBacks",
+                name: "Menus",
                 columns: table => new
                 {
-                    Id_FeedBack = table.Column<int>(type: "INTEGER", nullable: false)
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    Pseudo_FeedBack = table.Column<string>(type: "TEXT", nullable: false),
-                    Notation_FeedBack = table.Column<int>(type: "INTEGER", nullable: false),
-                    Email_FeedBack = table.Column<string>(type: "TEXT", nullable: false),
-                    Message_FeedBack = table.Column<string>(type: "TEXT", nullable: false)
+                    Name = table.Column<string>(type: "TEXT", nullable: true),
+                    Description = table.Column<string>(type: "TEXT", nullable: true),
+                    Price = table.Column<decimal>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_FeedBacks", x => x.Id_FeedBack);
+                    table.PrimaryKey("PK_Menus", x => x.Id);
                 });
         }
 
@@ -31,7 +30,7 @@ namespace LaBonneAuberge.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "FeedBacks");
+                name: "Menus");
         }
     }
 }
