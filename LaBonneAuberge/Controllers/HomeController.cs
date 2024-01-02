@@ -12,8 +12,6 @@ namespace LaBonneAuberge.Controllers
         private readonly ILogger<HomeController> _logger;
         private readonly LaBonneAubergeContext _context;
 
-        private readonly LaBonneAubergeContext _context;
-
         public HomeController(ILogger<HomeController> logger, LaBonneAubergeContext context)
         {
             _logger = logger;
@@ -31,7 +29,7 @@ namespace LaBonneAuberge.Controllers
         {
             return View();
         }
-        
+
         public async Task<IActionResult> Contact()
         {
             var TeamList = await _context.TeamLists.ToListAsync();
