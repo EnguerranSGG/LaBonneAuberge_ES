@@ -10,6 +10,7 @@ namespace LaBonneAuberge.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly LaBonneAubergeContext _context;
 
         private readonly LaBonneAubergeContext _context;
 
@@ -18,7 +19,6 @@ namespace LaBonneAuberge.Controllers
             _logger = logger;
             _context = context;
         }
-
         public IActionResult Index()
         {
             return View();
@@ -31,14 +31,17 @@ namespace LaBonneAuberge.Controllers
         {
             return View();
         }
-          public IActionResult Contact()
+        
+        public async Task<IActionResult> Contact()
         {
-            return View();
+            var TeamList = await _context.TeamLists.ToListAsync();
+            return View(TeamList);
         }
 
-        public IActionResult Avis()
+        public async Task<IActionResult> Avis()
         {
-            return View();
+            var feedBacks = await _context.FeedBacks.ToListAsync();
+            return View(feedBacks);
         }
 
         public async Task<IActionResult> Carte()

@@ -2,6 +2,8 @@
     ViewData["Title"] = "Avis";
 }
 
+@model IEnumerable<LaBonneAuberge.Models.FeedBackModel>
+
 <div class="container mt-5">
     <h2 class="mb-4">Donnez-nous votre avis !</h2>
     <form>
@@ -27,4 +29,27 @@
 <div class="Average_notation">
     <i class="lar la-star" data-value="1"></i><i class="lar la-star" data-value="2"></i><i class="lar la-star" data-value="3"></i><i class="lar la-star"data-value="4"></i><i class="lar la-star" data-value="5"></i>
     <input type="hidden" name="notation" id="notation" value="0">
-</div>    
+</div>
+
+
+<h2>Liste des Catégories</h2>
+
+<table>
+    <tr>
+        <th>Pseudo</th>
+        <th>Notation</th>
+        <th>Email</th>
+        <th>Message</th>
+
+    </tr>
+
+    @foreach (var feedBack in Model)
+    {
+        <tr>
+            <td>@feedBack.Pseudo_FeedBack</td>
+            <td>@feedBack.Notation_FeedBack</td>
+            <td>@feedBack.Email_FeedBack</td>
+            <td>@feedBack.Message_FeedBack</td>
+        </tr>
+    }
+  </table>    
