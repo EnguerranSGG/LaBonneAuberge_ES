@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LaBonneAuberge.Migrations
 {
     [DbContext(typeof(LaBonneAubergeContext))]
-    [Migration("20231229112234_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20231229112234_FeedBack")]
+    partial class FeedBack
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
