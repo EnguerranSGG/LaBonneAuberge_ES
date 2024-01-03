@@ -1,6 +1,7 @@
 @{
     ViewData["Title"] = "Contact";
 }
+@model IEnumerable<LaBonneAuberge.Models.TeamList>
  <div class="container mt-5 pt-5">
         <div class="row mt-5 ">
             <div class="col-md-4  marginContact p-5 bg-white">
@@ -37,3 +38,23 @@
             </div>
         </div>
     </div>
+
+    
+<h2>Liste des Catégories</h2>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Titre</th>
+        <th>Description</th>
+    </tr>
+
+    @foreach (var TeamLists in Model)
+    {
+        <tr>
+            <td>@TeamLists.Id</td>
+            <td>@TeamLists.Name</td>
+            <td>@TeamLists.Job</td>
+        </tr>
+    }
+  </table>
