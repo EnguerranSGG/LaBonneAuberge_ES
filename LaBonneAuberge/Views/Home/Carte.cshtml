@@ -3,6 +3,18 @@
 }
 @model IEnumerable<LaBonneAuberge.Models.Menu>
 
+<h1>Carte du moment</h1>
+
+
+@foreach (var category in Model) {
+    <h3>@category.Nom</h3>
+    <ul>
+        @foreach (var menu in category.Menus) {
+            <li>@menu.Name</li>
+        }
+    </ul>
+}
+
 <style>
     .menu-section {
         display: none;
