@@ -32,24 +32,16 @@
 </div>
 
 
-<h2>Liste des Catégories</h2>
+<h2>Les avis de nos chers cowboys :</h2>
 
-<table>
-    <tr>
-        <th>Pseudo</th>
-        <th>Notation</th>
-        <th>Email</th>
-        <th>Message</th>
-
-    </tr>
-
-    @foreach (var feedBack in Model)
-    {
-        <tr>
-            <td>@feedBack.Pseudo_FeedBack</td>
-            <td>@feedBack.Notation_FeedBack</td>
-            <td>@feedBack.Email_FeedBack</td>
-            <td>@feedBack.Message_FeedBack</td>
-        </tr>
-    }
-  </table>    
+@foreach (var feedBack in Model)
+{
+    <section class="mb-3" id="feedback">
+    <div class="Pseudo_Notation">
+        <p>@feedBack.Pseudo_FeedBack @feedBack.Notation_FeedBack</p>
+    </div>
+    <div>
+        <p>@feedBack.Message_FeedBack</p>
+    </div>
+    </section>
+}
