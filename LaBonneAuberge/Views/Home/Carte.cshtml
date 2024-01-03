@@ -1,8 +1,8 @@
 @{
     ViewData["Title"] = "Carte";
 }
-
 @model IEnumerable<LaBonneAuberge.Models.Category>
+
 <h1>Carte du moment</h1>
 
 
@@ -15,48 +15,100 @@
     </ul>
 }
 
-@* 
-
-<h2>Entrées</h2>
-<table>
-    <tr>
-        <th>ID</th>
-        <th>Nom</th>
-        <th>Description</th>
-        <th>Prix</th>
-    </tr>
-    @foreach (var Menu in Model)
-    {
-        @foreach (var task in Category) {
-            <tr>
-            <td>@task.Id</td>
-            <td>@task.Name</td>
-            <td>@task.Description</td>
-            <td>@task.Price</td>
-        </tr>
-            <li>@Category.Menu</li>
-        }
-
-        
+<style>
+    .menu-section {
+        display: none;
     }
-</table>
-<h2>Plats</h2>
-<table>
-    <tr>
-        <th>ID</th>
-        <th>Nom</th>
-        <th>Description</th>
-        <th>Prix</th>
-    </tr>
-    @foreach (var task in Model)
-    {
-        <tr>
-            <td>@task.Id</td>
-            <td>@task.Name</td>
-            <td>@task.Description</td>
-            <td>@task.Price</td>
-        </tr>
-    }
-</table>
-<h2>Desserts</h2> *@
-@* </LaBonneAuberge.Models.Task> *@
+</style>
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $(".menu-button").on("click", function () {
+            var section = $(this).data("section");
+            $(".menu-section").not("." + section).slideUp();
+            $("." + section).slideToggle();
+        });
+    });
+</script>
+
+<div class="container mt-5">
+    <!-- Entête avec l'image -->
+    <div class="row">
+        <div class="col-md-4">
+            <img src="/img/Plat2.jpg" alt="Image du restaurant" class="img-fluid">
+        </div>
+        <div class="col-md-8">
+            <!-- Section de présentation texte -->
+
+            <p>Le meilleur endroit pour savourer des plats délicieux et une ambiance chaleureuse.</p>
+        </div>
+    </div>
+
+    <!-- Menu du jour -->
+   <div class="row mt-4">
+    <div class="col-md-12">
+        <h3 class="mt-3 mb-4">La carte</h3>
+        <ul class="list-group">
+            <!-- Entrée -->
+            <li class="list-group-item">
+                <div class="row">
+                    <div class="col-md-8">
+                        <h5>Entrée</h5>
+                        <p>Description</p>
+                    </div>
+                    
+                </div>
+            </li>
+
+                <!-- Plat -->
+                <li class="list-group-item">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <h5>Plat</h5>
+                            <p>Description</p>
+                        </div>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <h5>Dessert</h5>
+                            <p>Description</p>
+                        </div>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+        <div class="col-md-12">
+            <h3 class="mt-5 mb-4">Les boissons</h3>
+            <ul class="list-group">
+                <!-- Entrée -->
+                <li class="list-group-item">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <h5>Soft</h5>
+                            <p>Description</p>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Plat -->
+                <li class="list-group-item">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <h5>Avec alcool</h5>
+                            <p>Description</p>
+                        </div>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+</LaBonneAuberge.Models.Task>
