@@ -1,12 +1,12 @@
 @{
     ViewData["Title"] = "Carte";
 }
-@model IEnumerable<LaBonneAuberge.Models.Menu>
+@model IEnumerable<LaBonneAuberge.Models.Category>
 
 <h1>Carte du moment</h1>
 
 
-@foreach (var category in Model) {
+ @foreach (var category in Model) {
     <h3>@category.Nom</h3>
     <ul>
         @foreach (var menu in category.Menus) {
