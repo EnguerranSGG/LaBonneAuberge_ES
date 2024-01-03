@@ -1,4 +1,3 @@
-using LaBonneAuberge.Migrations;
 using LaBonneAuberge.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
@@ -44,8 +43,8 @@ namespace LaBonneAuberge.Controllers
 
         public async Task<IActionResult> Carte()
         {
-            var Menu = await _context.Menus.ToListAsync();
-            return View(Menu);
+            var categories = await _context.Categories.Include(m => m.Menus).ToListAsync();
+            return View(categories);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
