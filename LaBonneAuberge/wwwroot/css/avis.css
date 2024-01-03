@@ -11,3 +11,18 @@ h2 {
     border: 1px solid #e2c0a1;
 }
 
+#feedback {
+    border: 1px solid #e2c0a1;
+    border-radius: 10px;
+}
+
+#feedback p {
+    padding-left: 1%;
+}
+
+.Pseudo_Notation {
+    border-radius: 10px 10px 0px 0px;
+    font-weight: bold;
+    background: linear-gradient(to top, #F3E3d3 0%, #e2c0a1 100%);
+}
+
