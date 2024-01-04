@@ -10,11 +10,7 @@ header{
   background-image: url(/img/woodheader.jpg);
   background-repeat: no-repeat;
   background-size:cover;
-  border-bottom: 4px solid black;
-  
- 
-  /* background-attachment: fixed; */
-  
+  border-bottom: 4px solid black;  
 }
 .navbar{
   background-color : rgb(232, 102, 69);
