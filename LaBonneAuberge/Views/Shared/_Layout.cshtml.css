@@ -6,8 +6,18 @@ a.navbar-brand {
   text-align: center;
   word-break: break-all;
 }
+header{
+  background-image: url(/img/woodheader.png);
+  
+ 
+  /* background-attachment: fixed; */
+  
+}
 .navbar{
-  background-color : rgb(221, 80, 48);
+  
+  
+  background-position: 100px;
+  
 
 }
 
