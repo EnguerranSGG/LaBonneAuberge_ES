@@ -1,4 +1,4 @@
--- Exemples d'insertions avec des ID différents
+-- Menus table
 INSERT INTO Menus ( Name, Description, Price, CategoryId)
 VALUES ('Filet Mignon', 'Un morceau tendre et juteux de filet mignon de bœuf, grillé à la perfection.', 35.99, 1);
 
@@ -110,3 +110,13 @@ VALUES ('Raspberry Mojito', 'Rhum blanc, framboises fraîches, menthe, sucre, ea
 
 INSERT INTO Menus (Name, Description, Price, CategoryId)
 VALUES ('Aperol Spritz', 'Aperol, prosecco, eau gazeuse et une tranche d''orange, servi sur glace.', 13.99, 5);
+
+--TeamLists Table
+
+INSERT INTO "TeamLists" ("Name", "Age", "Job")
+VALUES
+    ('Jean', 28, 'Chef de cuisine'),
+    ('Marie', 24, 'Serveur'),
+    ('Pierre', 32, 'Sommelier'),
+    ('Sophie', 22, 'Assistant de cuisine'),
+    ('Luc', 30, 'Manager');
