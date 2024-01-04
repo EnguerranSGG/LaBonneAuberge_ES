@@ -8,10 +8,7 @@ a.navbar-brand {
 }
 header{
  
-  border-bottom: 2px solid black;
-  
- 
-  /* background-attachment: fixed; */
+ background-color: orange;
   
 }
 .navbar{
