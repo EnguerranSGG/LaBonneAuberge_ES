@@ -1,3 +1,23 @@
 @{
     ViewData["Title"] = "Team";
 }
+@model IEnumerable<LaBonneAuberge.Models.TeamList>
+<h2>Liste des Catégories</h2>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Titre</th>
+        <th>Description</th>
+    </tr>
+
+    @foreach (var TeamLists in Model)
+    {
+        <tr>
+            <td>@TeamLists.Id</td>
+            <td>@TeamLists.Name</td>
+            <td>@TeamLists.Job</td>
+            <td>@TeamLists.Description</td>
+        </tr>
+    }
+  </table>
