@@ -24,14 +24,12 @@
 
   <h2 class="m-5">L'équipe de la Bonne Auberge : </h2>
 <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-
     <div class="carousel-inner  carousel-16-9">
         @foreach (var TeamLists in Model)
         {
-            <div class="carousel-item active">
+            <div class="carousel-item @if (TeamLists == Model.First()) { <text>active</text> }">
                 <img src="~/img/@TeamLists.Photo" class="d-block w-100 h-30" alt="...">
                 <div class="carousel-caption fade">
-
                     <h2>@TeamLists.Name</h2>
                     <h3>@TeamLists.Job</h3>
                     <h4>@TeamLists.Description</h4><br>
@@ -39,7 +37,7 @@
             </div>
         }
     </div>
- 
+
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
         data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
