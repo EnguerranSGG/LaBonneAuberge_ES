@@ -23,7 +23,11 @@ body {
 }
 
 h3{
-  font-family: 'Ewert', serif;
+  font-family: 'Rye', serif;
+}
+p{
+  font-family: 'Bevan', serif;
+
 }
 .borderSimple{
   border: 1px solid rgb(226, 192, 161);
