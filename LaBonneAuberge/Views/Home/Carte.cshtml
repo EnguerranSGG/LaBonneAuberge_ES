@@ -3,7 +3,7 @@
 }
 
 
-<style> 
+<style>
     .menu-section {
         display: none;
     }
@@ -11,56 +11,58 @@
 
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
-<script>
-    $(document).ready(function () {
-        $(".menu-button").on("click", function () {
-            var section = $(this).data("section");
-            $(".menu-section").not("." + section).slideUp();
-            $("." + section).slideToggle();
-        });
-    });
-</script>
+<style>
+    .menu-container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .menu-item {
+        border: 1px solid #ccc;
+        padding: 10px; /* Ajoutez un padding si nécessaire */
+        margin: 10px; /* Ajoutez une marge si nécessaire */
+        width: 200px; /* Définissez la largeur fixe */
+        min-height: 100px; /* Hauteur minimale */
+        max-height: 200px; /* Hauteur maximale */
+        overflow: hidden; /* Masque tout contenu dépassant la hauteur maximale */
+    }
+</style>
 
 <div class="container mt-5 mb-5">
-    <!-- Entête avec l'image -->
     <div class="row">
-        <div class="col-md-4">
-            <img src="/img/Plat2.jpg" alt="Image du restaurant" class="img-fluid">
-        </div>
         <div class="col-md-8">
             <!-- Section de présentation texte -->
-
+            <h3 class="mt-5 mb-5 display-5">La carte</h3>
             <p class="fs-3">Le meilleur endroit pour savourer des plats délicieux et une ambiance chaleureuse.</p>
         </div>
     </div>
 
     <!-- Menu du jour -->
-   <div class="row mt-4">
-    <div class="col-md-12">
-        <h3 class="mt-5 mb-5 display-5">La carte</h3>
-        <ul class="list-group">
-            <!-- Entrée -->
-          
-                        @model IEnumerable<LaBonneAuberge.Models.Category>
- @foreach (var category in Model) {
-     <li class="list-group-item">
-                <div class="row">
-                    <div class="col-md-8">
-    <h3 class = "mb-4 mt-4">@category.Nom</h3>
-    <ul class = "mb-4" >
-        @foreach (var menu in category.Menus) {
-            <li >@menu.Name</li>
-        }
-    </ul >
-         </div>
-                    
-                </div>
-            </li>
-} 
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <ul class="list-group">
+                <!-- Entrée -->
+                @model IEnumerable<LaBonneAuberge.Models.Category>
+                @foreach (var category in Model)
+                {
+                    <li class="list-group-item">
+                        <div class="row">
+                            <div class="col-md-8 mb-4">
+                                <h3 class="mb-4 mt-4">@category.Nom</h3>
+                                <div class="menu-container">
+                                    @foreach (var menu in category.Menus)
+                                    {
+                                        <div class="menu-item">
+                                            <h5 class="mt-3 mb-4">@menu.Name (@menu.Price €)</h5>
+                                            @menu.Description
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                }
             </ul>
         </div>
     </div>
 </div>
-
-
-</LaBonneAuberge.Models.Task>
