@@ -22,7 +22,7 @@ body {
   margin:0px;
 }
 
-h3{
+h3, h2, h1{
   font-family: 'Rye', serif;
 }
 p{

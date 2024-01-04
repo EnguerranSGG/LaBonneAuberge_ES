@@ -15,17 +15,26 @@
     .menu-container {
         display: flex;
         flex-wrap: wrap;
+        
+        border-image: url(/img/border.png)30;
     }
 
     .menu-item {
-        border: 1px solid #ccc;
+        border: 10px solid #ccc;
         padding: 10px; /* Ajoutez un padding si nécessaire */
+        padding-bottom: 300px;
         margin: 10px; /* Ajoutez une marge si nécessaire */
         width: 200px; /* Définissez la largeur fixe */
         min-height: 100px; /* Hauteur minimale */
         max-height: 200px; /* Hauteur maximale */
         overflow: hidden; /* Masque tout contenu dépassant la hauteur maximale */
+        border-image: url(/img/border.png)60;
+        
     }
+    @* .borderCustom{
+        border: 10px solid #ccc;
+        border-image: url(/img/border.png)50;
+    } *@
 </style>
 
 <div class="container mt-5 mb-5">
@@ -45,7 +54,7 @@
                 @model IEnumerable<LaBonneAuberge.Models.Category>
                 @foreach (var category in Model)
                 {
-                    <li class="list-group-item">
+                    <li class="list-group-item borderCustom">
                         <div class="row">
                             <div class="col-md-8 mb-4">
                                 <h3 class="mb-4 mt-4">@category.Nom</h3>
