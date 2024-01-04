@@ -1,19 +1,7 @@
 @{
     ViewData["Title"] = "Carte";
 }
-@model IEnumerable<LaBonneAuberge.Models.Category>
 
- <h1>Carte du moment</h1>
-
-
- @foreach (var category in Model) {
-    <h3>@category.Nom</h3>
-    <ul>
-        @foreach (var menu in category.Menus) {
-            <li>@menu.Name</li>
-        }
-    </ul>
-} 
 
 <style>
     .menu-section {
@@ -52,59 +40,23 @@
         <h3 class="mt-3 mb-4">La carte</h3>
         <ul class="list-group">
             <!-- Entrée -->
-            <li class="list-group-item">
+          
+                        @model IEnumerable<LaBonneAuberge.Models.Category>
+ @foreach (var category in Model) {
+     <li class="list-group-item">
                 <div class="row">
                     <div class="col-md-8">
-                        <h5>Entrée</h5>
-                        <p>Description</p>
-                    </div>
+    <h3>@category.Nom</h3>
+    <ul>
+        @foreach (var menu in category.Menus) {
+            <li>@menu.Name</li>
+        }
+    </ul>
+         </div>
                     
                 </div>
             </li>
-
-                <!-- Plat -->
-                <li class="list-group-item">
-                    <div class="row">
-                        <div class="col-md-8">
-                            <h5>Plat</h5>
-                            <p>Description</p>
-                        </div>
-                    </div>
-                </li>
-                <li class="list-group-item">
-                    <div class="row">
-                        <div class="col-md-8">
-                            <h5>Dessert</h5>
-                            <p>Description</p>
-                        </div>
-                    </div>
-                </li>
-
-            </ul>
-        </div>
-        <div class="col-md-12">
-            <h3 class="mt-5 mb-4">Les boissons</h3>
-            <ul class="list-group">
-                <!-- Entrée -->
-                <li class="list-group-item">
-                    <div class="row">
-                        <div class="col-md-8">
-                            <h5>Soft</h5>
-                            <p>Description</p>
-                        </div>
-                    </div>
-                </li>
-
-                <!-- Plat -->
-                <li class="list-group-item">
-                    <div class="row">
-                        <div class="col-md-8">
-                            <h5>Avec alcool</h5>
-                            <p>Description</p>
-                        </div>
-                    </div>
-                </li>
-
+} 
             </ul>
         </div>
     </div>
