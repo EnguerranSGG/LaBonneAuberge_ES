@@ -9,7 +9,7 @@ INSERT INTO Menus ( Name, Description, Price, CategoryId)
 VALUES ( 'Assiette Mixte Grillée', 'Une sélection de viandes grillées comprenant du bœuf, de l''agneau et du poulet, servie avec des légumes grillés.', 42.75, 2);
 
 INSERT INTO Menus ( Name, Description, Price, CategoryId)
-VALUES ('Steak au Poivre', 'Un steak savoureux recouvert d''une sauce au poivre noir, accompagné de pommes de terre rissolées.', 31.50,1);
+VALUES ('Steak au Poivre', 'Un steak savoureux recouvert d''une sauce au poivre noir, accompagné de pommes de terre rissolées.', 31.50, 2);
 
 
 INSERT INTO Menus (Name, Description, Price, CategoryId)
