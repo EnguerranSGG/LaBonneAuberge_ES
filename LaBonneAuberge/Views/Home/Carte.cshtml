@@ -1,9 +1,9 @@
 @{
     ViewData["Title"] = "Carte";
 }
-@model IEnumerable<LaBonneAuberge.Models.Menu>
+@model IEnumerable<LaBonneAuberge.Models.Category>
 
-<h1>Carte du moment</h1>
+ <h1>Carte du moment</h1>
 
 
 @foreach (var category in Model) {
@@ -13,7 +13,7 @@
             <li>@menu.Name</li>
         }
     </ul>
-}
+} 
 
 <style>
     .menu-section {
