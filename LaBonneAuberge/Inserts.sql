@@ -1,28 +1,28 @@
 -- Menus table
 INSERT INTO Menus ( Name, Description, Price, CategoryId)
-VALUES ('Filet Mignon', 'Un morceau tendre et juteux de filet mignon de bœuf, grillé à la perfection.', 35.99, 1);
+VALUES ('Filet Mignon', 'Un morceau tendre et juteux de filet mignon de bœuf, grillé à la perfection.', 35.99, 2);
 
 INSERT INTO Menus (Name, Description, Price, CategoryId)
-VALUES ( 'Côte de Porc Glacée au Miel', 'Côtes de porc épaisses cuites lentement et glacées avec une sauce au miel délicieusement sucrée.', 28.50, 1);
+VALUES ( 'Côte de Porc Glacée au Miel', 'Côtes de porc épaisses cuites lentement et glacées avec une sauce au miel délicieusement sucrée.', 28.50, 2);
 
 INSERT INTO Menus ( Name, Description, Price, CategoryId)
-VALUES ( 'Assiette Mixte Grillée', 'Une sélection de viandes grillées comprenant du bœuf, de l''agneau et du poulet, servie avec des légumes grillés.', 42.75, 1);
+VALUES ( 'Assiette Mixte Grillée', 'Une sélection de viandes grillées comprenant du bœuf, de l''agneau et du poulet, servie avec des légumes grillés.', 42.75, 2);
 
 INSERT INTO Menus ( Name, Description, Price, CategoryId)
 VALUES ('Steak au Poivre', 'Un steak savoureux recouvert d''une sauce au poivre noir, accompagné de pommes de terre rissolées.', 31.50,1);
 
 
 INSERT INTO Menus (Name, Description, Price, CategoryId)
-VALUES ('Brochettes de Bœuf Marinées', 'Brochettes de bœuf tendre marinées dans des épices exotiques, grillées à la perfection.', 14.99, 2);
+VALUES ('Brochettes de Bœuf Marinées', 'Brochettes de bœuf tendre marinées dans des épices exotiques, grillées à la perfection.', 14.99, 1);
 
 INSERT INTO Menus (Name, Description, Price, CategoryId)
-VALUES ('Carpaccio de Filet de Bœuf', 'Tranches fines de filet de bœuf cru assaisonné avec de l''huile d''olive, du parmesan et des câpres.', 16.50, 2);
+VALUES ('Carpaccio de Filet de Bœuf', 'Tranches fines de filet de bœuf cru assaisonné avec de l''huile d''olive, du parmesan et des câpres.', 16.50, 1);
 
 INSERT INTO Menus (Name, Description, Price, CategoryId)
-VALUES ('Ailes de Poulet Épicées', 'Ailes de poulet croustillantes assaisonnées avec un mélange d''épices piquantes, accompagnées de sauce au choix.', 11.75, 2);
+VALUES ('Ailes de Poulet Épicées', 'Ailes de poulet croustillantes assaisonnées avec un mélange d''épices piquantes, accompagnées de sauce au choix.', 11.75, 1);
 
 INSERT INTO Menus (Name, Description, Price, CategoryId)
-VALUES ('Assiette de Charcuterie', 'Une sélection de charcuteries fines, comprenant du salami, du jambon et des saucisses, accompagnée de cornichons et de moutarde.', 18.25, 2);
+VALUES ('Assiette de Charcuterie', 'Une sélection de charcuteries fines, comprenant du salami, du jambon et des saucisses, accompagnée de cornichons et de moutarde.', 18.25, 1);
 
 
 INSERT INTO Menus (Name, Description, Price, CategoryId)
