@@ -19,6 +19,11 @@ html {
 
 body {
   margin-bottom: 60px;
+  margin:0px;
+}
+
+h3{
+  font-family: 'Ewert', serif;
 }
 .borderSimple{
   border: 1px solid rgb(226, 192, 161);
