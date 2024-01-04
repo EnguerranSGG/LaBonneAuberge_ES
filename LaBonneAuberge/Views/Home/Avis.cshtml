@@ -16,8 +16,9 @@
             <input type="text" class="form-control" id="inputPseudo" placeholder="Pseudo sous lequel vous apparaîtrez." required>
         </div>
         <div class="mb-3">
-            <label for="inputNotation" class="form-label">Note</label>
-            <input type="number" class="form-control" id="inputNotation" placeholder="Veuillez entrer une note entre 1 et 5." min="1" max="5" required>
+            <label for="notation" class="form-label">Note</label>
+            <i class="lar la-star" data-value="1"></i><i class="lar la-star" data-value="2"></i><i class="lar la-star" data-value="3"></i><i class="lar la-star"data-value="4"></i><i class="lar la-star" data-value="5"></i>
+            <input type="text" name="notation" id="notation" value="0" required>
         </div>
         <div class="mb-3">
             <label for="inputComments" class="form-label">Commentaire</label>
@@ -26,30 +27,22 @@
         <button type="submit" id="btn_feedback_form" class="btn btn-primary">Poster</button>
     </form>
 </div>
-<div class="Average_notation">
-    <i class="lar la-star" data-value="1"></i><i class="lar la-star" data-value="2"></i><i class="lar la-star" data-value="3"></i><i class="lar la-star"data-value="4"></i><i class="lar la-star" data-value="5"></i>
-    <input type="hidden" name="notation" id="notation" value="0">
+
+<div class="container mt-5">
+
+<h2>Les avis de nos chers cowboys :</h2>
+
+@foreach (var feedBack in Model)
+{
+    <div class="container mt-5">
+    <section class="mb-3" id="feedback">
+    <div class="Pseudo_Notation">
+        <p>@feedBack.Pseudo_FeedBack <i class="lar la-star" data-value="1"></i><i class="lar la-star" data-value="2"></i><i class="lar la-star" data-value="3"></i><i class="lar la-star"data-value="4"></i><i class="lar la-star" data-value="5"></i><input type="hidden" value="@feedBack.Notation_FeedBack" name="old_notation" class="old_notation"></p>
+    </div>
+    <div>
+        <p>@feedBack.Message_FeedBack</p>
+    </div>
+    </section>
+    </div>
+}
 </div>
-
-
-<h2>Liste des Catégories</h2>
-
-<table>
-    <tr>
-        <th>Pseudo</th>
-        <th>Notation</th>
-        <th>Email</th>
-        <th>Message</th>
-
-    </tr>
-
-    @foreach (var feedBack in Model)
-    {
-        <tr>
-            <td>@feedBack.Pseudo_FeedBack</td>
-            <td>@feedBack.Notation_FeedBack</td>
-            <td>@feedBack.Email_FeedBack</td>
-            <td>@feedBack.Message_FeedBack</td>
-        </tr>
-    }
-  </table>    
