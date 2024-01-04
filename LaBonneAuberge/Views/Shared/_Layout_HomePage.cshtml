@@ -21,8 +21,8 @@
             <div class="container-fluid justify-content-between">
 
                 <!-- Navbar Toggler (Always visible, aligned to the left) -->
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#leftNavbar" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#leftNavbar"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"><i class="fa-solid fa-burger" style="color:white;"></i></span>
                 </button>
                 <!-- Logo (Centered) -->
@@ -32,14 +32,9 @@
 
                 <!-- Small Menu with 2 Links (Aligned to the right) -->
                 <div class="" id="RightNavbar">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Liens réseaux</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Langues</a>
-                        </li>
-                    </ul>
+                    <a class="nav-link"><i class="fa-brands fa-instagram" class="logo_header"
+                            style="color:white;"></i></a>
+                    <a class="nav-link" href="#">Fr</a>
                 </div>
 
 
@@ -79,6 +74,13 @@
 
             </div>
         </nav>
+        <section class="HomePage_Presentation">
+            <p>
+                Bienvenue à La Bonne Auberge ! <br><br>
+                Un restaurant où l'authenticité et la chaleur de l'ouest rencontrent la délicieuse saveur de la
+                viande...
+            </p>
+        </section>
     </header>
     <main role="main" class="pb-3">
         @RenderBody()
