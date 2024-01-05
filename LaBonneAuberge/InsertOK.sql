@@ -38,6 +38,12 @@ CREATE TABLE IF NOT EXISTS "TeamLists" (
 	CONSTRAINT "PK_TeamLists" PRIMARY KEY("Id" AUTOINCREMENT)
 );
 INSERT INTO "__EFMigrationsHistory" ("MigrationId","ProductVersion") VALUES ('20240103134338_AllTables','8.0.0');
+INSERT INTO "FeedBacks" ("Pseudo_FeedBack", "Notation_FeedBack", "Email_FeedBack", "Message_FeedBack") VALUES
+('Alice', 4, 'alice@example.com', 'Très bonne expérience culinaire, j''ai adoré les plats!'),
+('Bob', 5, 'bob@example.com', 'Le service était exceptionnel et la cuisine était délicieuse.'),
+('Charlie', 3, 'charlie@example.com', 'Pas mal, mais je pense que certaines portions pourraient être plus grandes.'),
+('David', 5, 'david@example.com', 'Tout était parfait, de l''accueil au dessert!'),
+('Eva', 2, 'eva@example.com', 'Malheureusement, la qualité des plats ne correspondait pas à mes attentes.');
 INSERT INTO "Categories" ("Id","Nom") VALUES (1,'Entrées'),
  (2,'Plats'),
  (3,'Desserts'),
