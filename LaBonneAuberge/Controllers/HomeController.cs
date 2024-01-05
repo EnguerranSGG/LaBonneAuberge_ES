@@ -57,5 +57,24 @@ namespace LaBonneAuberge.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        public IActionResult Reservation()
+        {
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Reservation([Bind("Title,Description")] Reservation reservation)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Add(reservation);
+                await _context.SaveChangesAsync();
+                TempData["SuccessMessage"] = "Livre bien créé!";
+                return RedirectToAction(nameof(Index));
+            }
+            return View(reservation);
+        }
+
     }
 }
