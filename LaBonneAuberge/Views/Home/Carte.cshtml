@@ -13,15 +13,11 @@
 
 <script>
    $(document).ready(function () {
-    // Lorsqu'un élément avec la classe "menu-item" est cliqué
     $('.menu-item').click(function () {
-        // Récupérer les données du menu
         var menuName = $(this).find('.menu-name').text();
         var menuPrice = $(this).find('.menu-price').text();
         var menuDescription = $(this).find('.menu-description').html();
         var menuImgSrc = $(this).find('.menu-img').attr('src');
-
-        // Créer une modal avec le contenu de la description du menu
         var modal = $('<div class="modal fade" tabindex="-1" role="dialog">' +
             '<div class="modal-dialog border" role="document">' +
             '<div class="modal-content">' +
@@ -34,20 +30,14 @@
             '</div>' +
             '</div>');
 
-        // Ajouter la modal au body et l'afficher
         $('body').append(modal);
 
-        // Afficher la modal
         modal.modal('show');
 
-        // Afficher l'image dans la modal
         modal.find('.modal-image').show();
 
-        // Gérer l'événement de fermeture de la modal
         modal.on('hidden.bs.modal', function () {
-            // Cacher l'image lorsque la modal est fermée
             modal.find('.modal-image').hide();
-            // Supprimer la modal du DOM
             modal.remove();
         });
     });
@@ -68,7 +58,6 @@
     margin-bottom: 20px;
     border-radius: 30%;
 }
-/* CSS to show the modal image when the modal is open */
 .modal.show .modal-image {
     display: block;
 }
@@ -88,18 +77,12 @@
     .menu-item {
         border: 10px solid #ccc;
         padding: 10px;
-        /* Ajoutez un padding si nécessaire */
         padding-bottom: 380px;
         margin: 10px;
-        /* Ajoutez une marge si nécessaire */
         width: 300px;
-        /* Définissez la largeur fixe */
         min-height: 100px;
-        /* Hauteur minimale */
         max-height: 200px;
-        /* Hauteur maximale */
         overflow: hidden;
-        /* Masque tout contenu dépassant la hauteur maximale */
         border-image: url(/img/border.png)60;
         display:flex;
         flex-direction: column;
@@ -128,9 +111,9 @@
         margin-left:30px;}
 </style>
 
-<div class="container mt-5 mb-5">
+<div class="container mt-5 pt-5 mb-5">
             <!-- Section de présentation texte -->
-            <h3 class="mt-5 mb-5 display-5">La carte</h3>
+            <h3 class="mt-5 mb-5 display-5">La carte</h3> <i class="fa-solid fa-hat-cowboy"></i>
             <p class="fs-3">Le meilleur endroit pour savourer des plats délicieux et une ambiance chaleureuse.</p>
     </div>
 
