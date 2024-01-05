@@ -7,9 +7,12 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using LaBonneAuberge.Data;
 using LaBonneAuberge.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace LaBonneAuberge
 {
+    [Authorize]
+
     public class AdminTeamListController : Controller
     {
         private readonly LaBonneAubergeContext _context;
