@@ -9,4 +9,6 @@ public class Menu
     public string? Description { get; set; }
     public decimal Price { get; set; }
     public Category Category { get; set; }
+
+    public string? Img {get;set;}
 }

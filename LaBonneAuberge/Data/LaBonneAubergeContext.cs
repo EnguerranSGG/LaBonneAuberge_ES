@@ -1,9 +1,11 @@
 using LaBonneAuberge.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
-namespace LaBonneAuberge.Data
-{
- public class LaBonneAubergeContext : DbContext
+namespace LaBonneAuberge.Data;
+
+ public class LaBonneAubergeContext :  IdentityDbContext<IdentityUser>
  {
  public LaBonneAubergeContext(DbContextOptions<LaBonneAubergeContext> options) :
 base(options)
@@ -15,4 +17,4 @@ base(options)
   public DbSet<FeedBackModel> FeedBacks { get; set; }
   public DbSet<TeamList> TeamLists { get; set; }
  }
-}
+

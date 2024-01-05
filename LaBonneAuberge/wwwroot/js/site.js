@@ -1,7 +1,7 @@
 ﻿window.onload = () => {
     const stars = document.querySelectorAll('form .la-star');
     const feedbackSections = document.querySelectorAll('.Pseudo_Notation');
-    
+
     for (const star of stars) {
         star.addEventListener('mouseover', function () {
             resetStars();
@@ -33,6 +33,20 @@
             star.classList.remove('lar');
         }
     }
+
+    /** function resetStars(selectedStar) {
+        for (star of stars) {
+            if (star.dataset.value > notation) {
+                star.style.color = 'black';
+                star.classList.add('lar');
+                star.classList.remove('las');
+            } else {
+                star.style.color = 'orange';
+                star.classList.add('las');
+                star.classList.remove('lar');
+            }
+        }
+    } */
 
     function oldNotationFeedback() {
         feedbackSections.forEach((feedback, index) => {

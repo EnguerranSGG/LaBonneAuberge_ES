@@ -1,18 +1,15 @@
-h2 {
-    color: #3e3a32;
-}
 
 .form-label {
     color: #3e3a32;
 }
 
 #btn_feedback_form {
-    background-color: #e2c0a1;
-    border: 1px solid #e2c0a1;
+    background-color: rgb(232, 102, 69);
+    border: 1px solid rgb(232, 102, 69);
 }
 
 #feedback {
-    border: 1px solid #e2c0a1;
+    border: 1px solid rgb(232, 102, 69);
     border-radius: 10px;
 }
 
@@ -23,6 +20,14 @@ h2 {
 .Pseudo_Notation {
     border-radius: 10px 10px 0px 0px;
     font-weight: bold;
-    background: linear-gradient(to top, #F3E3d3 0%, #e2c0a1 100%);
+    background: linear-gradient(to top,rgb(232, 102, 69) 0%, rgb(232, 102, 69) 100%);
+}
+
+#feedback {
+    background-color: white;
+}
+
+.avis_h2 { 
+    text-align: end;
 }
 

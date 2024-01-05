@@ -30,9 +30,8 @@ namespace LaBonneAuberge.Controllers
         }
 
         public async Task<IActionResult> Contact()
-        {
-            var TeamList = await _context.TeamLists.ToListAsync();
-            return View(TeamList);
+        { 
+            return View();
         }
 
         public async Task<IActionResult> Avis()
@@ -45,6 +44,12 @@ namespace LaBonneAuberge.Controllers
         {
             var categories = await _context.Categories.Include(m => m.Menus).ToListAsync();
             return View(categories);
+        }
+
+          public async Task<IActionResult> Team()
+        {
+            var TeamList= await _context.TeamLists.ToListAsync();
+            return View(TeamList);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

@@ -7,16 +7,14 @@ a.navbar-brand {
   word-break: break-all;
 }
 header{
- 
- background-color: orange;
-  
+  background-image: url(/img/woodheader.jpg);
+  background-repeat: no-repeat;
+  background-size:cover;
+  border-bottom: 4px solid black;  
 }
 .navbar{
-  
-  
+  background-color : rgb(232, 102, 69);
   background-position: 100px;
-  
-
 }
 
 a {
@@ -52,7 +50,6 @@ button.accept-policy {
 }
 
 .footer {
-  position: absolute;
   bottom: 0;
   width: 100%;
   white-space: nowrap;
