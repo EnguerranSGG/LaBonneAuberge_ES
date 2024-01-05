@@ -1,23 +1,4 @@
 BEGIN TRANSACTION;
-CREATE TABLE IF NOT EXISTS "__EFMigrationsHistory" (
-	"MigrationId"	TEXT NOT NULL,
-	"ProductVersion"	TEXT NOT NULL,
-	CONSTRAINT "PK___EFMigrationsHistory" PRIMARY KEY("MigrationId")
-);
-CREATE TABLE IF NOT EXISTS "Categories" (
-	"Id"	INTEGER NOT NULL,
-	"Nom"	TEXT,
-	CONSTRAINT "PK_Categories" PRIMARY KEY("Id" AUTOINCREMENT)
-);
-CREATE TABLE IF NOT EXISTS "FeedBacks" (
-	"Id_FeedBack"	INTEGER NOT NULL,
-	"Pseudo_FeedBack"	TEXT NOT NULL,
-	"Notation_FeedBack"	INTEGER NOT NULL,
-	"Email_FeedBack"	TEXT NOT NULL,
-	"Message_FeedBack"	TEXT NOT NULL,
-	CONSTRAINT "PK_FeedBacks" PRIMARY KEY("Id_FeedBack" AUTOINCREMENT)
-);
-
 CREATE TABLE IF NOT EXISTS "Menus" (
 	"Id"	INTEGER NOT NULL,
 	"Name"	TEXT,
@@ -28,27 +9,6 @@ CREATE TABLE IF NOT EXISTS "Menus" (
 	CONSTRAINT "FK_Menus_Categories_CategoryId" FOREIGN KEY("CategoryId") REFERENCES "Categories"("Id") ON DELETE CASCADE,
 	CONSTRAINT "PK_Menus" PRIMARY KEY("Id" AUTOINCREMENT)
 );
-CREATE TABLE IF NOT EXISTS "TeamLists" (
-	"Id"	INTEGER NOT NULL,
-	"Name"	TEXT,
-	"Age"	INTEGER NOT NULL,
-	"Job"	TEXT,
-	"Description"	TEXT,
-	"Photo"	TEXT,
-	CONSTRAINT "PK_TeamLists" PRIMARY KEY("Id" AUTOINCREMENT)
-);
-INSERT INTO "__EFMigrationsHistory" ("MigrationId","ProductVersion") VALUES ('20240103134338_AllTables','8.0.0');
-INSERT INTO "FeedBacks" ("Pseudo_FeedBack", "Notation_FeedBack", "Email_FeedBack", "Message_FeedBack") VALUES
-('Alice', 4, 'alice@example.com', 'Très bonne expérience culinaire, j''ai adoré les plats!'),
-('Bob', 5, 'bob@example.com', 'Le service était exceptionnel et la cuisine était délicieuse.'),
-('Charlie', 3, 'charlie@example.com', 'Pas mal, mais je pense que certaines portions pourraient être plus grandes.'),
-('David', 5, 'david@example.com', 'Tout était parfait, de l''accueil au dessert!'),
-('Eva', 2, 'eva@example.com', 'Malheureusement, la qualité des plats ne correspondait pas à mes attentes.');
-INSERT INTO "Categories" ("Id","Nom") VALUES (1,'Entrées'),
- (2,'Plats'),
- (3,'Desserts'),
- (4,'Boissons Sans Alcool'),
- (5,'Boissons Alcoolisées');
 INSERT INTO "Menus" VALUES (1,'Filet Mignon','Un morceau tendre et juteux de filet mignon de bœuf, grillé à la perfection.','35.99',2,'filet mignon-min.jpeg');
 INSERT INTO "Menus" VALUES (2,'Côte de Porc Glacée au Miel','Côtes de porc épaisses cuites lentement et glacées avec une sauce au miel délicieusement sucrée.','28.50',2,'cotedeporc-min.jpg');
 INSERT INTO "Menus" VALUES (3,'Assiette Mixte Grillée','Une sélection de viandes grillées comprenant du bœuf, de l''agneau et du poulet, servie avec des légumes grillés.','42.75',2,'Assiette Mixte grillée-min.jpg');
@@ -90,11 +50,6 @@ INSERT INTO "Menus" VALUES (46,'Whisky Highball','Whisky, eau gazeuse et glace, 
 INSERT INTO "Menus" VALUES (47,'Caipirinha','Cachaça, sucre, et quartiers de citron vert, écrasés avec de la glace.','12.75',5,'capirinha.jpg');
 INSERT INTO "Menus" VALUES (48,'Raspberry Mojito','Rhum blanc, framboises fraîches, menthe, sucre, eau gazeuse et citron vert.','14.25',5,'raspberry mojito.jpg');
 INSERT INTO "Menus" VALUES (49,'Aperol Spritz','Aperol, prosecco, eau gazeuse et une tranche d''orange, servi sur glace.','13.99',5,'aperol spritz.jpg');
-INSERT INTO "TeamLists" ("Id","Name","Age","Job","Description","Photo") VALUES (1,'Jean',28,'Chef de cuisine','Avec une passion pour la gastronomie, il supervise la préparation des plats, crée de nouvelles recettes et assure que chaque assiette qui quitte la cuisine reflète la qualité et le goût exceptionnels de l''établissement.','gege.webp'),
- (2,'Marie',24,'Serveur','Aimable et attentionnée, elle assure un service de qualité en prenant les commandes, en conseillant les clients sur le menu, et en veillant à ce que chaque repas soit une expérience agréable.','serveuse.jpg'),
- (3,'Pierre',32,'Sommelier','Pierre possède une connaissance approfondie des vins et des accords mets et vins. Il guide les clients dans le choix du vin parfait pour accompagner leur repas, contribuant ainsi à une expérience gastronomique complète.','sommelier.jpg'),
- (4,'Sophie',22,'Assistant de cuisine','Apportant son soutien précieux au chef de cuisine, Sophie participe à la préparation des ingrédients, à l''organisation de la cuisine, et contribue à maintenir une efficacité optimale dans les opérations de cuisine.','assistante.jpg'),
- (5,'Luc',30,'Manager','supervise l''ensemble de l''établissement, s''assurant que tout fonctionne harmonieusement. De la gestion du personnel aux opérations quotidiennes, Luc veille à ce que l''expérience des clients soit exceptionnelle à tous égards.','manager.jpg');
 CREATE INDEX IF NOT EXISTS "IX_Menus_CategoryId" ON "Menus" (
 	"CategoryId"
 );
