@@ -1,0 +1,115 @@
+@{
+    ViewData["Title"] = "Reservation";
+}
+
+@model LaBonneAuberge.Models.Reservation 
+
+@if (TempData["SuccessMessage"] != null) {
+<p>@TempData["SuccessMessage"]</p>
+}
+@* <form asp-action="Create" method="post">
+ <div>
+ <label asp-for="Nom"></label>
+ <input asp-for="Nom" />
+ <span asp-validation-for="Nom" class="text-danger"></span>
+ </div>
+ <div>
+ <label asp-for="Email"></label>
+ <textarea asp-for="Email"></textarea>
+ </div>
+ <button type="submit">Envoyer</button>
+</form> *@
+
+
+<div id="booking" class="section">
+    <div class="section-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7 col-md-push-5">
+                    <div class="booking-cta">
+                        <h1>Make your reservation</h1>
+                        <p>
+                            Réservez dès maintenant et <br>
+                            laissez-nous vous offrir <br>
+                            une escapade culinaire inoubliable.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-md-pull-5">
+                    <div class="booking-form">
+                        <form asp-action="Reservation" method="post">
+                            <div class="form-group">
+                                <label asp-for ="Nom" class="form-label">Nom et Prénom</label>
+                                <input asp-for="Nom" class="form-control" type="text" placeholder="Entrez votre nom">
+                                <span asp-validation-for="Nom" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Email" class="form-label">Email</label>
+                                <input asp-for="Email" class="form-control" type="email" placeholder="Entrez votre email">
+                                <span asp-validation-for="Email" class="text-danger"></span>
+
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="NumTel" class="form-label">N° Telephone</label>
+                                <input asp-for="NumTel" class="form-control" type="email" placeholder="Entrez votre numéro de téléphone">
+                                <span asp-validation-for="NumTel" class="text-danger"></span>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label asp-for="Date" class="form-label">Date</label>
+                                        <input asp-for="Date" class="form-control" type="date" required>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label asp-for="Time" class="form-label">Heure</label>
+                                        <input asp-for="Time" class="form-control" type="time" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                @* <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <span class="form-label">Rooms</span>
+                                        <select class="form-control">
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                        </select>
+                                        <span class="select-arrow"></span>
+                                    </div>
+                                </div> *@
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label asp-for="NombreAdultes" class="form-label">Adultes</label>
+                                        <select asp-for="NombreAdultes" class="form-control">
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                        </select>
+                                        <span class="select-arrow"></span>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label asp-for="NombreEnfants" class="form-label">Enfants</label>
+                                        <select asp-for="NombreEnfants" class="form-control">
+                                            <option>0</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                        </select>
+                                        <span class="select-arrow"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-btn">
+                                <button class="submit-btn">Check availability</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
