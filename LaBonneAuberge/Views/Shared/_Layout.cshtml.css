@@ -12,6 +12,10 @@ header{
   background-size:cover;
   border-bottom: 4px solid black;  
 }
+  
+ 
+  /* background-attachment: fixed; */
+
 .navbar{
   background-color : rgb(232, 102, 69);
   background-position: 100px;
