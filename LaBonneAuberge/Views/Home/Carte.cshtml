@@ -1,66 +1,147 @@
 @{
     ViewData["Title"] = "Carte";
 }
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
 
+<script>
+   $(document).ready(function () {
+    $('.menu-item').click(function () {
+        var menuName = $(this).find('.menu-name').text();
+        var menuPrice = $(this).find('.menu-price').text();
+        var menuDescription = $(this).find('.menu-description').html();
+        var menuImgSrc = $(this).find('.menu-img').attr('src');
+        var modal = $('<div class="modal fade" tabindex="-1" role="dialog">' +
+            '<div class="modal-dialog border" role="document">' +
+            '<div class="modal-content">' +
+            '<div class="modal-body">' +
+            '<img src="' + menuImgSrc + '" alt="Image de la modal" class="modal-image">' +
+            '<h5 class="mt-3 mb-4">' + menuName + ' </h5>' +
+            '<div class="menu-description">' + menuDescription + '</div>' +
+            '</div>' +
+            '</div>' +
+            '</div>' +
+            '</div>');
 
-<style> 
+        $('body').append(modal);
+
+        modal.modal('show');
+
+        modal.find('.modal-image').show();
+
+        modal.on('hidden.bs.modal', function () {
+            modal.find('.modal-image').hide();
+            modal.remove();
+        });
+    });
+});
+</script>
+
+<style>
     .menu-section {
         display: none;
     }
+    .modal-image {
+    display: none;
+    width:460px;
+}
+.menu-img{
+    width:150px;
+    
+    margin-bottom: 20px;
+    border-radius: 30%;
+}
+.modal.show .modal-image {
+    display: block;
+}
 </style>
 
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
-<script>
-    $(document).ready(function () {
-        $(".menu-button").on("click", function () {
-            var section = $(this).data("section");
-            $(".menu-section").not("." + section).slideUp();
-            $("." + section).slideToggle();
-        });
-    });
-</script>
+<style>
+    .menu-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
 
-<div class="container mt-5 mb-5">
-    <!-- Entête avec l'image -->
-    <div class="row">
-        <div class="col-md-4">
-            <img src="/img/Plat2.jpg" alt="Image du restaurant" class="img-fluid">
-        </div>
-        <div class="col-md-8">
+        border-image: url(/img/border.png)30;
+    }
+
+    .menu-item {
+        border: 10px solid #ccc;
+        padding: 10px;
+        padding-bottom: 380px;
+        margin: 10px;
+        width: 300px;
+        min-height: 100px;
+        max-height: 200px;
+        overflow: hidden;
+        border-image: url(/img/border.png)60;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        
+
+    }
+    .menu-item:hover{
+        background-color:rgb(243, 227, 211);
+        cursor: pointer;
+    }
+    .initial-hidden {
+    display: none;
+}
+
+
+    .borderCustom{
+        
+        border:10px solid #ccc;
+        border-image:url(/img/border.png)50;
+        margin-left:30px;}
+        .borderCustom2{
+        
+        border:20px solid #ccc;
+        border-image:url(/img/BorderWood-min.png)150;
+        margin-left:30px;}
+</style>
+
+<div class="container mt-5 pt-5 mb-5">
             <!-- Section de présentation texte -->
-
+            <h3 class="mt-5 mb-5 display-5">La carte</h3> <i class="fa-solid fa-hat-cowboy"></i>
             <p class="fs-3">Le meilleur endroit pour savourer des plats délicieux et une ambiance chaleureuse.</p>
-        </div>
     </div>
 
     <!-- Menu du jour -->
-   <div class="row mt-4">
+    <div class="row mt-4">
     <div class="col-md-12">
-        <h3 class="mt-5 mb-5 display-5">La carte</h3>
         <ul class="list-group">
             <!-- Entrée -->
-          
-                        @model IEnumerable<LaBonneAuberge.Models.Category>
- @foreach (var category in Model) {
-     <li class="list-group-item">
-                <div class="row">
-                    <div class="col-md-8">
-    <h3 class = "mb-4 mt-4">@category.Nom</h3>
-    <ul class = "mb-4" >
-        @foreach (var menu in category.Menus) {
-            <li >@menu.Name</li>
-        }
-    </ul >
-         </div>
-                    
-                </div>
-            </li>
-} 
-            </ul>
-        </div>
+            @model IEnumerable<LaBonneAuberge.Models.Category>
+            @foreach (var category in Model)
+            {
+                <li class="list-group-item borderCustom2">
+                    <div class="col-md-12 mb-4">
+                        <h3 class="mb-4 mt-4">@category.Nom</h3>
+                        <div class="menu-container">
+                            @foreach (var menu in category.Menus)
+                            {
+                                <div class="menu-item">
+                                    <h5 class="mt-3 mb-4 menu-name">@menu.Name (@menu.Price €)</h5>
+                                    <img src="/img/ModalsMenu/@menu.Img" class="menu-img"  alt="...">
+                                    <div class="menu-description">@menu.Description</div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </li>
+            }
+        </ul>
     </div>
 </div>
-
-
-</LaBonneAuberge.Models.Task>
+</div>

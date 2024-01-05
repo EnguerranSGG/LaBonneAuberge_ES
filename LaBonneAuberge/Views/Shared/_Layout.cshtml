@@ -7,14 +7,14 @@
     <title>@ViewData["Title"] - LaBonneAuberge</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha384-GLhlTQ8iS6tETFVz9UJcNsoIZ5YjG3/6pkjz5f+0eb4zj6aLlXip0Ulb4Q" crossorigin="anonymous">
     <link rel="stylesheet" href="~/css/avis.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/presentation.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/LaBonneAuberge.styles.css" asp-append-version="true" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Ewert&display=swap" rel="stylesheet">
-    <link rel="stylesheet"
-        href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bevan&family=Rye&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
 </head>
 
 <body>
@@ -66,12 +66,12 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Avis">Avis</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Notre
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Team">Notre
                                 équipe</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home"
-                                asp-action="Privacy">Recrutement</a>
+                                asp-action="Team">Recrutement</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home"
@@ -84,12 +84,9 @@
             </div>
         </nav>
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
-
+    <main role="main" class="pb-3">
+        @RenderBody()
+    </main>
     <footer class="border-top footer text-muted">
         <div class="container">
             &copy; 2023 - LaBonneAuberge - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
