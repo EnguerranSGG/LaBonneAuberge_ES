@@ -7,23 +7,41 @@ a.navbar-brand {
   word-break: break-all;
 }
 header{
-  background-image: url(/img/woodheader.jpg);
+
   background-repeat: no-repeat;
-  background-size:cover;
-  border-bottom: 4px solid black;  
+  background-size:cover;  
 }
   
- 
+.fa-solid {
+  font-size: 5vh;
+}
+
+.fa-brands {
+  font-size: 5vh;
+}
   /* background-attachment: fixed; */
 
 .navbar{
-  background-color : rgb(232, 102, 69);
+  background-color : rgb(62, 58, 50);
   background-position: 100px;
 }
 
-a {
-  color: #0e609b;
+#leftNavbar {
+  position: absolute;
+  top: 60%;
+  padding: 1%;
+  background-color: rgba(0, 0, 0, .5);
+  z-index: 20;
+  border-radius: 10px;
 }
+
+.navbar-light .navbar-nav .nav-link {
+  color: white !important;
+}
+
+/* a {
+  color: #0e609b;
+} */
 
 .btn-primary {
   color: #fff;
@@ -61,4 +79,22 @@ button.accept-policy {
 }
 .logo{
   width:20vw;
+}
+
+@media (max-width: 575.98px) {
+  .logo {
+    width: 35vw;
+  }
+
+  .fa-solid {
+    font-size: 4vh;
+  }
+  
+  .fa-brands {
+    font-size: 4vh;
+  }
+
+  header{
+    border-bottom: 2vh solid black;
+  }
 }
