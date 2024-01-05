@@ -1,0 +1,53 @@
+@model IEnumerable<LaBonneAuberge.Models.FeedBackModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Pseudo_FeedBack)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Notation_FeedBack)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email_FeedBack)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Message_FeedBack)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pseudo_FeedBack)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Notation_FeedBack)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email_FeedBack)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Message_FeedBack)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id_FeedBack">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id_FeedBack">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id_FeedBack">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
