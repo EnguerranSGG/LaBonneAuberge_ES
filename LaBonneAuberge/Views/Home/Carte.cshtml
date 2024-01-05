@@ -1,12 +1,72 @@
 @{
     ViewData["Title"] = "Carte";
 }
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
 
+<script>
+   $(document).ready(function () {
+    // Lorsqu'un élément avec la classe "menu-item" est cliqué
+    $('.menu-item').click(function () {
+        // Récupérer les données du menu
+        var menuName = $(this).find('.menu-name').text();
+        var menuPrice = $(this).find('.menu-price').text();
+        var menuDescription = $(this).find('.menu-description').html();
+        var menuImgSrc = $(this).find('.menu-img').attr('src');
+
+        // Créer une modal avec le contenu de la description du menu
+        var modal = $('<div class="modal fade" tabindex="-1" role="dialog">' +
+            '<div class="modal-dialog" role="document">' +
+            '<div class="modal-content">' +
+            '<div class="modal-body">' +
+            '<img src="' + menuImgSrc + '" alt="Image de la modal" class="modal-image">' +
+            '<h5 class="mt-3 mb-4">' + menuName + ' (' + menuPrice + ' €)</h5>' +
+            '<div class="menu-description">' + menuDescription + '</div>' +
+            '</div>' +
+            '</div>' +
+            '</div>' +
+            '</div>');
+
+        // Ajouter la modal au body et l'afficher
+        $('body').append(modal);
+
+        // Afficher la modal
+        modal.modal('show');
+
+        // Afficher l'image dans la modal
+        modal.find('.modal-image').show();
+
+        // Gérer l'événement de fermeture de la modal
+        modal.on('hidden.bs.modal', function () {
+            // Cacher l'image lorsque la modal est fermée
+            modal.find('.modal-image').hide();
+            // Supprimer la modal du DOM
+            modal.remove();
+        });
+    });
+});
+</script>
 
 <style>
     .menu-section {
         display: none;
     }
+    .modal-image {
+    display: none;
+    width:460px;
+}
+
+/* CSS to show the modal image when the modal is open */
+.modal.show .modal-image {
+    display: block;
+}
 </style>
 
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
@@ -15,26 +75,33 @@
     .menu-container {
         display: flex;
         flex-wrap: wrap;
-        
+
         border-image: url(/img/border.png)30;
     }
 
     .menu-item {
         border: 10px solid #ccc;
-        padding: 10px; /* Ajoutez un padding si nécessaire */
+        padding: 10px;
+        /* Ajoutez un padding si nécessaire */
         padding-bottom: 300px;
-        margin: 10px; /* Ajoutez une marge si nécessaire */
-        width: 200px; /* Définissez la largeur fixe */
-        min-height: 100px; /* Hauteur minimale */
-        max-height: 200px; /* Hauteur maximale */
-        overflow: hidden; /* Masque tout contenu dépassant la hauteur maximale */
+        margin: 10px;
+        /* Ajoutez une marge si nécessaire */
+        width: 200px;
+        /* Définissez la largeur fixe */
+        min-height: 100px;
+        /* Hauteur minimale */
+        max-height: 200px;
+        /* Hauteur maximale */
+        overflow: hidden;
+        /* Masque tout contenu dépassant la hauteur maximale */
         border-image: url(/img/border.png)60;
-        
+
     }
-    @* .borderCustom{
-        border: 10px solid #ccc;
-        border-image: url(/img/border.png)50;
-    } *@
+    .initial-hidden {
+    display: none;
+}
+
+    @*.borderCustom{border:10pxsolid#ccc;border-image:url(/img/border.png)50;}*@
 </style>
 
 <div class="container mt-5 mb-5">
@@ -59,13 +126,14 @@
                             <div class="col-md-8 mb-4">
                                 <h3 class="mb-4 mt-4">@category.Nom</h3>
                                 <div class="menu-container">
-                                    @foreach (var menu in category.Menus)
-                                    {
-                                        <div class="menu-item">
-                                            <h5 class="mt-3 mb-4">@menu.Name (@menu.Price €)</h5>
-                                            @menu.Description
-                                        </div>
-                                    }
+                                   @foreach (var menu in category.Menus)
+{
+    <div class="menu-item">
+        <h5 class="mt-3 mb-4 menu-name">@menu.Name (@menu.Price €)</h5>
+        <img src="~/img/@menu.Img" class="menu-img initial-hidden" alt="...">
+        <div class="menu-description">@menu.Description</div>
+    </div>
+}
                                 </div>
                             </div>
                         </div>
