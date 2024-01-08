@@ -29,11 +29,6 @@ namespace LaBonneAuberge.Controllers
             return View();
         }
 
-        public async Task<IActionResult> Contact()
-        {
-            return View();
-        }
-
         public async Task<IActionResult> Avis()
         {
             var feedBacks = await _context.FeedBacks.ToListAsync();
@@ -92,10 +87,25 @@ namespace LaBonneAuberge.Controllers
 
             return View(reservation);
         }
-
-
-
+        public IActionResult Contact()
+        {
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Contact([Bind("Email,Message")] Contact contact)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Add(contact);
+                await _context.SaveChangesAsync();
+                TempData["SuccessMessage"] = "Bien reçu cowboy!";
+                return RedirectToAction(nameof(Index));
+            }
+            return View(contact);
+        }
 
     }
+
 }
 

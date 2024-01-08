@@ -37,6 +37,14 @@ CREATE TABLE IF NOT EXISTS "TeamLists" (
 	"Photo"	TEXT,
 	CONSTRAINT "PK_TeamLists" PRIMARY KEY("Id" AUTOINCREMENT)
 );
+CREATE TABLE IF NOT EXISTS "Contact" (
+	"id"	INTEGER,
+	"Email"	TEXT,
+	"Message"	TEXT,
+	PRIMARY KEY("id" AUTOINCREMENT)
+);
+COMMIT;
+
 INSERT INTO "__EFMigrationsHistory" ("MigrationId","ProductVersion") VALUES ('20240103134338_AllTables','8.0.0');
 INSERT INTO "FeedBacks" ("Pseudo_FeedBack", "Notation_FeedBack", "Email_FeedBack", "Message_FeedBack") VALUES
 ('Alice', 4, 'alice@example.com', 'Très bonne expérience culinaire, j''ai adoré les plats!'),
@@ -93,9 +101,11 @@ INSERT INTO "Menus" VALUES (49,'Aperol Spritz','Aperol, prosecco, eau gazeuse et
 INSERT INTO "TeamLists" ("Id","Name","Age","Job","Description","Photo") VALUES (1,'Jean',28,'Chef de cuisine','Avec une passion pour la gastronomie, il supervise la préparation des plats, crée de nouvelles recettes et assure que chaque assiette qui quitte la cuisine reflète la qualité et le goût exceptionnels de l''établissement.','gege.webp'),
  (2,'Marie',24,'Serveur','Aimable et attentionnée, elle assure un service de qualité en prenant les commandes, en conseillant les clients sur le menu, et en veillant à ce que chaque repas soit une expérience agréable.','serveuse.jpg'),
  (3,'Pierre',32,'Sommelier','Pierre possède une connaissance approfondie des vins et des accords mets et vins. Il guide les clients dans le choix du vin parfait pour accompagner leur repas, contribuant ainsi à une expérience gastronomique complète.','sommelier.jpg'),
- (4,'Sophie',22,'Assistant de cuisine','Apportant son soutien précieux au chef de cuisine, Sophie participe à la préparation des ingrédients, à l''organisation de la cuisine, et contribue à maintenir une efficacité optimale dans les opérations de cuisine.','assistante.jpg'),
+ (4,'Sophie',22,'Assistante de cuisine','Apportant son soutien précieux au chef de cuisine, Sophie participe à la préparation des ingrédients, à l''organisation de la cuisine, et contribue à maintenir une efficacité optimale dans les opérations de cuisine.','assistante.jpg'),
  (5,'Luc',30,'Manager','supervise l''ensemble de l''établissement, s''assurant que tout fonctionne harmonieusement. De la gestion du personnel aux opérations quotidiennes, Luc veille à ce que l''expérience des clients soit exceptionnelle à tous égards.','manager.jpg');
 CREATE INDEX IF NOT EXISTS "IX_Menus_CategoryId" ON "Menus" (
 	"CategoryId"
 );
+
+
 COMMIT;

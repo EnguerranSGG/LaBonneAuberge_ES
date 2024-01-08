@@ -1,2 +1,16 @@
-
-
+.borderSimple{
+    border: 10px solid rgb(226, 192, 161);
+   border-image: url(/img/border.png)25 round;
+  }
+.btn{
+    background-color: #631E19;
+}
+.imghorse{
+    margin-left: 20px;
+}
+.bordercolors{
+    border-color: rgba(99, 30, 25, 0.422)
+}
+.policelabel{
+    font-weight: 600;
+}
