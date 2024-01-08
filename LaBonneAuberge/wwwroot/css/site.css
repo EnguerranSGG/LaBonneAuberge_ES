@@ -25,6 +25,7 @@ body {
 h3, h2, h1{
   font-family: 'Rye', serif;
 }
+
 p{
   font-family: 'Bevan', serif;
 
@@ -37,4 +38,8 @@ p{
 .marginContact{
   margin-right: 10vw;
 
+}
+
+.navbar-nav .nav-link {
+  color: white !important;
 }
