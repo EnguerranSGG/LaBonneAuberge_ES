@@ -64,8 +64,10 @@ namespace LaBonneAuberge.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Reservation([Bind("Nom,Date,Time,NombreAdultes,NombreEnfants,NumTel,Email,Message,Anniversaire")] Reservation reservation)
-        {   
+        
+        public async Task<IActionResult> Reservation([Bind("Nom,Date,Time,NombreAdultes,NombreEnfants,NumTel,Email,Message,Anniversaire,Fumeur")] Reservation reservation)
+        {     
+         
             if (ModelState.IsValid)
             {
                 _context.Add(reservation);
