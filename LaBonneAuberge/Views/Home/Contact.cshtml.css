@@ -8,3 +8,9 @@
 .imghorse{
     margin-left: 20px;
 }
+.bordercolors{
+    border-color: rgba(99, 30, 25, 0.422)
+}
+.policelabel{
+    font-weight: 600;
+}
