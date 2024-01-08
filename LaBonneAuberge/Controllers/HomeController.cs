@@ -64,8 +64,8 @@ namespace LaBonneAuberge.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Reservation([Bind("Title,Description")] Reservation reservation)
-        {
+        public async Task<IActionResult> Reservation([Bind("Nom,Date,Time,NombreAdultes,NombreEnfants,NumTel,Email,Message,Anniversaire")] Reservation reservation)
+        {   
             if (ModelState.IsValid)
             {
                 _context.Add(reservation);
@@ -73,8 +73,18 @@ namespace LaBonneAuberge.Controllers
                 TempData["SuccessMessage"] = "Livre bien créé!";
                 return RedirectToAction(nameof(Index));
             }
+            else {
+                foreach (var modelStateEntry in ModelState.Values)
+        {
+            foreach (var error in modelStateEntry.Errors)
+            {
+                Console.WriteLine($"Erreur de modèle: {error.ErrorMessage}");
+            }
+        }
+            }
             return View(reservation);
         }
+        
 
     }
 }
