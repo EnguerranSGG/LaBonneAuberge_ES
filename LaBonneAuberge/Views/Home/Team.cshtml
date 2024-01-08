@@ -2,32 +2,15 @@
     ViewData["Title"] = "Team";
 }
 @model IEnumerable<LaBonneAuberge.Models.TeamList>
-@* <h2>Liste des Catégories</h2>
 
-<table>
-    <tr>
-        <th>ID</th>
-        <th>Titre</th>
-        <th>Description</th>
-    </tr>
-
-    @foreach (var TeamLists in Model)
-    {
-        <tr>
-            <td>@TeamLists.Id</td>
-            <td>@TeamLists.Name</td>
-            <td>@TeamLists.Job</td>
-            <td>@TeamLists.Description</td>
-        </tr>
-    }
-  </table> *@
-
-  <h2 class="m-5">L'équipe de la Bonne Auberge : </h2>
+<h2 class="m-5">L'équipe de la Bonne Auberge : </h2>
 <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner  carousel-16-9">
         @foreach (var TeamLists in Model)
         {
-            <div class="carousel-item @if (TeamLists == Model.First()) { <text>active</text> }">
+            <div class="carousel-item @if (TeamLists == Model.First()) {
+                        <text>active</text>
+                        }">
                 <img src="~/img/@TeamLists.Photo" class="d-block w-100 h-30" alt="...">
                 <div class="carousel-caption fade">
                     <h2>@TeamLists.Name</h2>
@@ -70,5 +53,5 @@
 
 
 </div>
-    <h2>Si tu aimerais faire parti de l'équipe envoie nous ta candidature!</h2>
-    <form action="" method="post">Formulaire de candidature</form>
+<h2>Si tu aimerais faire parti de l'équipe envoie nous ta candidature!</h2>
+<form action="" method="post">Formulaire de candidature</form>

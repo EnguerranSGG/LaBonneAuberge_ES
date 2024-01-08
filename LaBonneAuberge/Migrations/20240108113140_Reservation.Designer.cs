@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LaBonneAuberge.Migrations
 {
     [DbContext(typeof(LaBonneAubergeContext))]
-    [Migration("20240108100554_Reservation")]
+    [Migration("20240108113140_Reservation")]
     partial class Reservation
     {
         /// <inheritdoc />
