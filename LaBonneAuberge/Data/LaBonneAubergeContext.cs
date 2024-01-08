@@ -18,5 +18,6 @@ base(options)
   public DbSet<TeamList> TeamLists { get; set; }
     public DbSet<Reservation> Reservations { get; set; }
 
+  public DbSet<Contact> Contact { get; set; }
  }
 
