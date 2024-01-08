@@ -1,42 +1,51 @@
 @{
     ViewData["Title"] = "Contact";
 }
+<style>
 
- <div class="container mt-5 pt-5">
-        <div class="row mt-5 ">
-            <div class="col-md-4  marginContact p-5 bg-white">
-                <div class="mb-4 ">
-                    <h2 class="mb-4">Informations de Contact</h2>
-                    <p>Adresse: 123 Rue de l'Exemple, Ville</p>
-                    <p>Téléphone: +33 1 23 45 67 89</p>
-                    <p>Email: info@example.com</p>
-                </div>
+</style>
+<div class="container mt-5 pt-5">
+    <div class="row mt-5 ">
+        <div class="col-md-4  marginContact p-5 bg-white">
+            <div class="mb-4 ">
+                <h2 class="mb-4">Informations de Contact</h2>
+                <p>Adresse: 123 Rue de l'Exemple, Ville</p>
+                <p>Téléphone: +33 1 23 45 67 89</p>
+                <p>Email: info@example.com</p>
             </div>
-            <div class="col-md-6 borderSimple p-5 ">
-                <div>
-                    <h2>Nous Contacter par Mail</h2>
-                    <form action="#" method="post">
+        </div>
+        <div class="col-md-6 borderSimple p-5 ">
+            <div>
+                <h2>Nous Contacter par Mail</h2>
+                <form action="#" method="post">
                     <div class="form-group">
                         <label for="email" class="mb-3 mt-3">Adresse e-mail:</label>
-                        <input type="email" class="form-control" id="email" name="email" placeholder="Veuillez entrez votre mail." required>
+                        <input type="email" class="form-control" id="email" name="email"
+                            placeholder="Veuillez entrez votre mail." required>
                     </div>
                     <div class="form-group">
                         <label for="message" class="mb-3 mt-3">Message:</label>
-                        <textarea class="form-control" id="message" name="message" rows="5"  placeholder="Veuillez entrez votre message..." required></textarea>
+                        <textarea class="form-control" id="message" name="message" rows="5"
+                            placeholder="Veuillez entrez votre message..." required></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary mt-3">Envoyer</button>
                 </form>
-                </div>
-            </div>
-        </div>
-       
-        <div class="row mt-5 mb-5">
-            <div class="col">
-                <h2 class="mb-5 bg-white">Localisation</h2>
-                <iframe class = "border" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1105.4102318086805!2d2.5723516489387475!3d48.7795338779948!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e60eddf6461c17%3A0x73b321a27d386f08!2sLa%20Queue-en-Brie!5e0!3m2!1sfr!2sfr!4v1703774785948!5m2!1sfr!2sfr" width="1200" height="
-                350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
     </div>
 
 
+    <div class="row mt-5 mb-5">
+        <div class="col">
+            <div class="d-flex">
+            <h2 class="bg-white pt-4 mb-5">Localisation</h2>
+            <img src="/img/horse.gif"  alt="" width="80px" height="80px" class="imghorse">
+            </div>
+        </div>
+        <iframe class="border ml-3"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1105.4102318086805!2d2.5723516489387475!3d48.7795338779948!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e60eddf6461c17%3A0x73b321a27d386f08!2sLa%20Queue-en-Brie!5e0!3m2!1sfr!2sfr!4v1703774785948!5m2!1sfr!2sfr"
+            width="1200" height="350" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+    </div>
+</div>
