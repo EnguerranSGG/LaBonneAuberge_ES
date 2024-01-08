@@ -19,7 +19,12 @@
  </div>
  <button type="submit">Envoyer</button>
 </form> *@
-
+<style>
+    .textarea#message {
+    /* background-color: blue; */
+    border-color: chartreuse;
+}
+</style>
 
 <div id="booking" class="section">
     <div class="section-center">
@@ -51,20 +56,35 @@
                             </div>
                             <div class="form-group">
                                 <label asp-for="NumTel" class="form-label">N° Telephone</label>
-                                <input asp-for="NumTel" class="form-control" type="email" placeholder="Entrez votre numéro de téléphone">
+                                <input asp-for="NumTel" class="form-control" type="tel" placeholder="Entrez votre numéro de téléphone">
                                 <span asp-validation-for="NumTel" class="text-danger"></span>
                             </div>
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label asp-for="Date" class="form-label">Date</label>
+                                          
                                         <input asp-for="Date" class="form-control" type="date" required>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label asp-for="Time" class="form-label">Heure</label>
-                                        <input asp-for="Time" class="form-control" type="time" required>
+                                        <select asp-for="Time" class="form-control" type="time" min="19:00" max="22:00" step="1800" required>
+                                            <option value="11:30">11:30</option>
+                                            <option value="12:00">12:00</option>
+                                            <option value="12:30">12:30</option>
+                                            <option value="13:00">13:00</option>
+                                            <option value="13:30">13:30</option>
+                                            <option value="14:00">14:00</option>
+                                            <option value="19:00">19:00</option>
+                                            <option value="19:30">19:30</option>
+                                            <option value="20:00">20:00</option>
+                                            <option value="20:30">20:30</option>
+                                            <option value="21:00">21:00</option>
+                                            <option value="21:30">21:30</option>
+                                            <option value="22:00">22:00</option>
+                                        </select>
                                     </div>
                                 </div>
                             </div>
@@ -73,7 +93,7 @@
                                     <div class="form-group">
                                         <span class="form-label">Rooms</span>
                                         <select class="form-control">
-                                            <option>1</option>
+                                            <option>1</option> 
                                             <option>2</option>
                                             <option>3</option>
                                         </select>
@@ -102,6 +122,22 @@
                                         <span class="select-arrow"></span>
                                     </div>
                                 </div>
+                            </div>
+                             <div class="col-md-4 col-md-pull-5">
+                                    <div class="form-group">
+                                        <label asp-for="Message" class="form-label">Message</label>
+                                        <textarea asp-for="Message" class="message" placeholder="Allergies, etc..."></textarea>
+                                        <span class="select-arrow"></span>
+                                    </div>
+                            </div>
+                            <div id="btn-group" class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+
+
+                                <input asp-for="Anniversaire" type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
+                                <label asp-for="Anniversaire" class="btn btn-outline-primary" for="btncheck1">Anniversaire</label>
+
+                                <input asp-for="Fumeur" type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
+                                <label asp-for="Fumeur" class="btn btn-outline-primary" for="btncheck2">Fumeur</label>
                             </div>
                             <div class="form-btn">
                                 <button class="submit-btn">Check availability</button>
