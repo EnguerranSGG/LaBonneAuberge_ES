@@ -37,6 +37,14 @@ CREATE TABLE IF NOT EXISTS "TeamLists" (
 	"Photo"	TEXT,
 	CONSTRAINT "PK_TeamLists" PRIMARY KEY("Id" AUTOINCREMENT)
 );
+CREATE TABLE IF NOT EXISTS "Contact" (
+	"id"	INTEGER,
+	"Email"	TEXT,
+	"Message"	TEXT,
+	PRIMARY KEY("id" AUTOINCREMENT)
+);
+COMMIT;
+
 INSERT INTO "__EFMigrationsHistory" ("MigrationId","ProductVersion") VALUES ('20240103134338_AllTables','8.0.0');
 INSERT INTO "FeedBacks" ("Pseudo_FeedBack", "Notation_FeedBack", "Email_FeedBack", "Message_FeedBack") VALUES
 ('Alice', 4, 'alice@example.com', 'Très bonne expérience culinaire, j''ai adoré les plats!'),
@@ -98,4 +106,6 @@ INSERT INTO "TeamLists" ("Id","Name","Age","Job","Description","Photo") VALUES (
 CREATE INDEX IF NOT EXISTS "IX_Menus_CategoryId" ON "Menus" (
 	"CategoryId"
 );
+
+
 COMMIT;
