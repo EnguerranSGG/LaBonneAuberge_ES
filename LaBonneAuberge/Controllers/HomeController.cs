@@ -30,7 +30,7 @@ namespace LaBonneAuberge.Controllers
         }
 
         public async Task<IActionResult> Contact()
-        { 
+        {
             return View();
         }
 
@@ -46,9 +46,9 @@ namespace LaBonneAuberge.Controllers
             return View(categories);
         }
 
-          public async Task<IActionResult> Team()
+        public async Task<IActionResult> Team()
         {
-            var TeamList= await _context.TeamLists.ToListAsync();
+            var TeamList = await _context.TeamLists.ToListAsync();
             return View(TeamList);
         }
 
@@ -64,29 +64,38 @@ namespace LaBonneAuberge.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        
-        public async Task<IActionResult> Reservation([Bind("Nom,Date,Time,NombreAdultes,NombreEnfants,NumTel,Email,Message,Anniversaire,Fumeur")] Reservation reservation)
-        {     
          
+
+        public async Task<IActionResult> Reservation([Bind("Nom,Date,Time,NombreAdultes,NombreEnfants,NumTel,Email,Message,Anniversaire,Fumeur")] Reservation reservation)
+        {            
             if (ModelState.IsValid)
             {
+                 if (reservation.Date < DateOnly.FromDateTime(DateTime.Now))
+                {
+                    ModelState.AddModelError("Date", "La date doit être dans le futur");
+                    return View(reservation);
+                }
                 _context.Add(reservation);
                 await _context.SaveChangesAsync();
-                TempData["SuccessMessage"] = "Livre bien créé!";
                 return RedirectToAction(nameof(Index));
             }
-            else {
-                foreach (var modelStateEntry in ModelState.Values)
-        {
-            foreach (var error in modelStateEntry.Errors)
+            else
             {
-                Console.WriteLine($"Erreur de modèle: {error.ErrorMessage}");
+                foreach (var modelStateEntry in ModelState.Values)
+                {
+                    foreach (var error in modelStateEntry.Errors)
+                    {
+                        Console.WriteLine($"Erreur de modèle: {error.ErrorMessage}");
+                    }
+                }
             }
-        }
-            }
+
             return View(reservation);
         }
-        
+
+
+
 
     }
 }
+
