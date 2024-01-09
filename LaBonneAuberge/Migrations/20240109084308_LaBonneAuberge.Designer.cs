@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LaBonneAuberge.Migrations
 {
     [DbContext(typeof(LaBonneAubergeContext))]
-    [Migration("20240105133110_LaBonneAubergeSchema")]
-    partial class LaBonneAubergeSchema
+    [Migration("20240109084308_LaBonneAuberge")]
+    partial class LaBonneAuberge
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -32,6 +32,23 @@ namespace LaBonneAuberge.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Categories");
+                });
+
+            modelBuilder.Entity("LaBonneAuberge.Models.Contact", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Message")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Contact");
                 });
 
             modelBuilder.Entity("LaBonneAuberge.Models.FeedBackModel", b =>
@@ -86,6 +103,50 @@ namespace LaBonneAuberge.Migrations
                     b.HasIndex("CategoryId");
 
                     b.ToTable("Menus");
+                });
+
+            modelBuilder.Entity("LaBonneAuberge.Models.Reservation", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<bool>("Anniversaire")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateOnly>("Date")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<bool>("Fumeur")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Message")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Nom")
+                        .IsRequired()
+                        .HasMaxLength(10)
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("NombreAdultes")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("NombreEnfants")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("NumTel")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<TimeOnly>("Time")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Reservations");
                 });
 
             modelBuilder.Entity("LaBonneAuberge.Models.TeamList", b =>
