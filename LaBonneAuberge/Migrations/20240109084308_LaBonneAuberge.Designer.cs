@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LaBonneAuberge.Migrations
 {
     [DbContext(typeof(LaBonneAubergeContext))]
-    [Migration("20240108113140_Reservation")]
-    partial class Reservation
+    [Migration("20240109084308_LaBonneAuberge")]
+    partial class LaBonneAuberge
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -32,6 +32,23 @@ namespace LaBonneAuberge.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Categories");
+                });
+
+            modelBuilder.Entity("LaBonneAuberge.Models.Contact", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Message")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Contact");
                 });
 
             modelBuilder.Entity("LaBonneAuberge.Models.FeedBackModel", b =>
@@ -112,6 +129,7 @@ namespace LaBonneAuberge.Migrations
 
                     b.Property<string>("Nom")
                         .IsRequired()
+                        .HasMaxLength(10)
                         .HasColumnType("TEXT");
 
                     b.Property<int>("NombreAdultes")

@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace LaBonneAuberge.Migrations
 {
     /// <inheritdoc />
-    public partial class LaBonneAubergeSchema : Migration
+    public partial class LaBonneAuberge : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -64,6 +64,20 @@ namespace LaBonneAuberge.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Contact",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Email = table.Column<string>(type: "TEXT", nullable: true),
+                    Message = table.Column<string>(type: "TEXT", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Contact", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "FeedBacks",
                 columns: table => new
                 {
@@ -77,6 +91,28 @@ namespace LaBonneAuberge.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_FeedBacks", x => x.Id_FeedBack);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Reservations",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Nom = table.Column<string>(type: "TEXT", maxLength: 10, nullable: false),
+                    Date = table.Column<DateOnly>(type: "TEXT", nullable: false),
+                    Time = table.Column<TimeOnly>(type: "TEXT", nullable: false),
+                    NombreAdultes = table.Column<int>(type: "INTEGER", nullable: false),
+                    NombreEnfants = table.Column<int>(type: "INTEGER", nullable: false),
+                    NumTel = table.Column<int>(type: "INTEGER", nullable: false),
+                    Email = table.Column<string>(type: "TEXT", nullable: false),
+                    Message = table.Column<string>(type: "TEXT", nullable: true),
+                    Anniversaire = table.Column<bool>(type: "INTEGER", nullable: false),
+                    Fumeur = table.Column<bool>(type: "INTEGER", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Reservations", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -287,10 +323,16 @@ namespace LaBonneAuberge.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
+                name: "Contact");
+
+            migrationBuilder.DropTable(
                 name: "FeedBacks");
 
             migrationBuilder.DropTable(
                 name: "Menus");
+
+            migrationBuilder.DropTable(
+                name: "Reservations");
 
             migrationBuilder.DropTable(
                 name: "TeamLists");
