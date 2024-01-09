@@ -124,7 +124,7 @@
 
 .booking-cta {
     margin-top: 80px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .booking-cta h1 {
@@ -163,4 +163,9 @@
 .message {
     /* background-color: blue; */
     border-color: chartreuse;
+}
+
+#btncheck1 {
+    color: #3e485c;
+    border-color: #C5CADC;
 }
