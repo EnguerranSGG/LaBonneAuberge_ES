@@ -24,7 +24,7 @@
 }
 
 .borderSimple{
-    border: 10px solid rgb(226, 192, 161);
+    border: 10px solid rgb(0, 0, 0);
    border-image: url(/img/border.png)25 round;
   }
 
