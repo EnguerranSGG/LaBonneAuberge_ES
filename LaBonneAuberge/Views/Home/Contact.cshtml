@@ -15,9 +15,9 @@
         margin-bottom: 30px;
     }
 </style>
-<div class="container mt-5 pt-5">
-    <div class="row mt-5 ">
-        <div class="col-md-4  marginContact p-5 bg-white">
+<div id="Contact"class="container mt-5 pt-5">
+    <div class="row mt-5" id="Info_contact">
+        <div class="col-md-4  marginContact p-5">
             <div class="mb-4 ">
                 <h2 class="mb-4">Informations de Contact</h2>
                 <p>Adresse: 123 Rue de l'Exemple, Ville</p>
@@ -34,12 +34,12 @@
                 <form asp-action="Contact" method="post">
                     <div class="form-group">
                         <label asp-for="Email" for="email" class="mb-3 mt-3 policelabel">Adresse e-mail:</label>
-                        <input asp-for="Email" type="email" class="form-control bordercolors" id="email" name="email"
+                        <input asp-for="Email" type="email" class="form-control bordercolors bg-transparent" id="email" name="email"
                             placeholder="Veuillez entrez votre mail." required>
                     </div>
                     <div class="form-group">
                         <label asp-for="Message" for="message" class="mb-3 mt-3 policelabel">Message:</label>
-                        <textarea asp-for="Message" class="form-control bordercolors" id="message" name="message"
+                        <textarea asp-for="Message" class="form-control bordercolors bg-transparent" id="message" name="message"
                             rows="5" placeholder="Veuillez entrez votre message..." required></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary mt-3">Envoyer</button>
@@ -52,7 +52,7 @@
     <div class="row mt-5 mb-5">
         <div class="col">
             <div class="d-flex">
-                <h2 class="bg-white pt-4 mb-5">Localisation</h2>
+                <h2 class="pt-4 mb-5">Localisation</h2>
                 <img src="/img/horse.gif" alt="" width="80px" height="70px" class="imghorse">
             </div>
         </div>
