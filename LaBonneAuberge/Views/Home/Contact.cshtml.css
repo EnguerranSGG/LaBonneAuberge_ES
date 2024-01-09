@@ -9,6 +9,16 @@
     max-width: 100vw !important;
 }
 
+#Localisation {
+    display: flex;
+    flex-direction: column;
+}
+
+#Localisation h2 {
+    color: white;
+    padding-left: 6%;
+}
+
 .marginContact {
     background-color: transparent !important;
 }
@@ -17,6 +27,7 @@
     border: 10px solid rgb(226, 192, 161);
    border-image: url(/img/border.png)25 round;
   }
+
 .btn{
     background-color: #631E19;
 }
