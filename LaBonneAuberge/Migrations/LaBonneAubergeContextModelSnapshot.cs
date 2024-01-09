@@ -31,6 +31,23 @@ namespace LaBonneAuberge.Migrations
                     b.ToTable("Categories");
                 });
 
+            modelBuilder.Entity("LaBonneAuberge.Models.Contact", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Message")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Contact");
+                });
+
             modelBuilder.Entity("LaBonneAuberge.Models.FeedBackModel", b =>
                 {
                     b.Property<int>("Id_FeedBack")
@@ -109,6 +126,7 @@ namespace LaBonneAuberge.Migrations
 
                     b.Property<string>("Nom")
                         .IsRequired()
+                        .HasMaxLength(10)
                         .HasColumnType("TEXT");
 
                     b.Property<int>("NombreAdultes")
