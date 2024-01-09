@@ -13,7 +13,11 @@ public static class SeedData
         {
             // Assurez-vous que la base de données est créée
             context.Database.EnsureCreated();
-
+if (context.Tasks.Any())
+ {
+ return; // DB has been seeded
+ }
+ 
             // Ajoutez les tables à la base de données
             context.Database.ExecuteSqlRaw(@"
                 BEGIN TRANSACTION;

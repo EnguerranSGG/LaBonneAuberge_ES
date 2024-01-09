@@ -1,4 +1,4 @@
-.section {
+/* .section {
     position: relative;
     height: 100vh;
 }
@@ -10,7 +10,15 @@
     right: 0;
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
+} */
+
+@media screen and (min-width: 768px) {
+    .booking-form {
+        position: relative;
+        top: -30px;
+    }
 }
+
 
 #booking {
     font-family: 'Montserrat', sans-serif;
@@ -127,11 +135,18 @@
     margin-bottom: 20px;
 }
 
+@media screen and (min-width: 768px) {
+    .booking-cta h1 {
+        font-size: 52px;
+        text-align: left;
+    }
+}
+
 .booking-cta h1 {
-    font-size: 52px;
     text-transform: uppercase;
     color: #fff;
     font-weight: 700;
+    /* text-align: center; */
 }
 
 .booking-cta p {
