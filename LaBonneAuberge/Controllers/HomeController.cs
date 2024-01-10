@@ -16,9 +16,10 @@ namespace LaBonneAuberge.Controllers
             _logger = logger;
             _context = context;
         }
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var feedBacks = await _context.FeedBacks.ToListAsync();
+            return View(feedBacks);
         }
         public IActionResult Presentation()
         {

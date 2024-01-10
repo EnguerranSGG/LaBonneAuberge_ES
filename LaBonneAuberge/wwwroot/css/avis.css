@@ -9,7 +9,7 @@
 }
 
 #feedback {
-    border: 1px solid rgb(232, 102, 69);
+    border: 1px solid white;
     border-radius: 10px;
 }
 
@@ -20,7 +20,9 @@
 .Pseudo_Notation {
     border-radius: 10px 10px 0px 0px;
     font-weight: bold;
-    background: linear-gradient(to top,rgb(232, 102, 69) 0%, rgb(232, 102, 69) 100%);
+    background-image: url(/img/wood-horizontal.png);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 #feedback {
