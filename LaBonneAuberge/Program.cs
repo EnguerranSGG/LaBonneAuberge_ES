@@ -14,11 +14,11 @@ options.UseSqlite(builder.Configuration.GetConnectionString("LaBonneAubergeConte
 
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<LaBonneAubergeContext>();
 var app = builder.Build();
-using (var scope = app.Services.CreateScope())
-{
- var services = scope.ServiceProvider;
- SeedData.Initialize(services);
-}
+// using (var scope = app.Services.CreateScope())
+// {
+//  var services = scope.ServiceProvider;
+//  SeedData.Initialize(services);
+// }
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {

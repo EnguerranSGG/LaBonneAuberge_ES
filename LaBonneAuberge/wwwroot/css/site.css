@@ -20,7 +20,15 @@ html {
 body {
   margin-bottom: 60px;
   margin:0px;
+  background-color: black;
+  background-image: url(/img/LA_Bonne_Auberge_3.webp);
+    background-size: cover;
+    background-attachment: fixed;
+ 
+  
 }
+
+
 
 h3, h2, h1{
   font-family: 'Rye', serif;
@@ -53,4 +61,5 @@ p{
 
 main #main {
   margin: 0 !important;
+  background-color : rgb(107, 68, 5);
 }
