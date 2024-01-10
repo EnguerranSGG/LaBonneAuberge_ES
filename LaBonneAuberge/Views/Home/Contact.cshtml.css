@@ -3,9 +3,9 @@
     margin-bottom: 0 !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
-    background-image: url(/img/LA_Bonne_Auberge_3.webp);
+    /* background-image: url(/img/LA_Bonne_Auberge_3.webp);
     background-size: cover;
-    background-attachment: fixed;
+    background-attachment: fixed; */
     max-width: 100vw !important;
 }
 
@@ -21,15 +21,18 @@
 
 .marginContact {
     background-color: transparent !important;
+    margin-left:10px;
+    margin-right:10px;
 }
 
 .borderSimple{
-    border: 10px solid rgb(226, 192, 161);
+    border: 10px solid rgb(0, 0, 0);
    border-image: url(/img/border.png)25 round;
   }
 
 .btn{
     background-color: #631E19;
+    border-color: black ;
 }
 .imghorse{
     margin-left: 20px;
