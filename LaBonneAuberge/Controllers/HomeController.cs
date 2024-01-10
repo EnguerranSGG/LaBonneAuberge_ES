@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using Microsoft.EntityFrameworkCore;
 using LaBonneAuberge.Data;
-
+using LaBonneAuberge.ViewModels;
 namespace LaBonneAuberge.Controllers
 {
     public class HomeController : Controller
@@ -18,9 +18,16 @@ namespace LaBonneAuberge.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            var feedBacks = await _context.FeedBacks.ToListAsync();
-            return View(feedBacks);
-        }
+            var viewModel = new HomeViewModel{
+                 // Chargement des produits depuis la base de donnée
+                Categories = await _context.Categories.Include(c => c.Menus).ToListAsync(),
+                FeedBacks = await _context.FeedBacks.ToListAsync()
+
+            };
+            return View(viewModel);
+            }
+            
+        
         public IActionResult Presentation()
         {
             return View();
