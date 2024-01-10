@@ -4,7 +4,7 @@ namespace LaBonneAuberge.ViewModels
 {
     public class HomeViewModel
     {
-        public IEnumerable<Category> Categories { get; set; }
-        public IEnumerable<Menu> Menus { get; set; }
+        public List<Category> Categories { get; set; }
+        public List<FeedBackModel> FeedBacks { get; set; }
     }
 }
