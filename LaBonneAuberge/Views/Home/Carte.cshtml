@@ -128,8 +128,9 @@
     .clickedImage {
         position: absolute;
         opacity: 1;
-        transition: opacity 3s ease-out;
+        transition: opacity 3s ease;
     }
+   
 </style>
 
 <div class="container mt-5 pt-5 mb-5">
@@ -168,34 +169,62 @@
 </div>
 
 <script>
-    function ajouterImage(event) {
-        // Créer un élément d'image
-        var img = document.createElement('img');
-        img.src = '/img/bullet.gif'; // Remplacez par le chemin correct de votre image
-           img.alt = 'Image ajoutée au clic';
-        img.className = 'clickedImage';
+    var audioElement = new Audio("/Sound/fire.mp3");
 
-        // Spécifier la taille de l'image
-        var largeurImage = 100; // spécifiez la largeur souhaitée en pixels
-        var hauteurImage = 100; // spécifiez la hauteur souhaitée en pixels
+function ajouterImage(event) {
+    // Créer un élément d'image
+    var img = document.createElement('img');
+    img.src = '/img/balle.png';
+    img.alt = 'Image ajoutée au clic';
+    img.className = 'clickedImage';
 
-        // Positionner l'image à l'emplacement du clic
-        img.style.width = largeurImage + 'px';
-        img.style.height = hauteurImage + 'px';
-        img.style.left = (event.pageX - (largeurImage / 2)) + 'px';
-        img.style.top = (event.pageY - (hauteurImage / 2)) + 'px';
+    // Spécifier la taille de l'image
+    var largeurImage = 100;
+    var hauteurImage = 100;
 
-        // Ajouter l'image au corps du document
-        document.body.appendChild(img);
+    // Positionner l'image à l'emplacement du clic
+    img.style.width = largeurImage + 'px';
+    img.style.height = hauteurImage + 'px';
+    img.style.left = (event.pageX - (largeurImage / 2)) + 'px';
+    img.style.top = (event.pageY - (hauteurImage / 2)) + 'px';
 
-        // Appliquer une transition d'opacité
-        setTimeout(function() {
-            img.style.opacity = 0;
-        }, 1000); // Déclenche la transition immédiatement
+    // Ajouter l'image au corps du document
+    document.body.appendChild(img);
 
-        // Supprimer l'image après la fin de la transition
-        setTimeout(function() {
-            document.body.removeChild(img);
-        }, 2010); // Attendez 1 seconde pour que la transition se termine
-    }
+    // Réinitialiser le lecteur audio
+    audioElement.currentTime = 0;
+
+    // Appliquer une transition d'opacité
+    setTimeout(function () {
+        img.style.opacity = 0;
+
+        // Jouer le son après une petite pause (100 ms)
+        setTimeout(function () {
+            audioElement.play();
+        }, 10);
+    }, 10);
+
+    // Supprimer l'image après la fin de la transition
+    setTimeout(function () {
+        document.body.removeChild(img);
+    }, 2010);
+}
+
+    document.addEventListener('DOMContentLoaded', function () {
+        var menuItems = document.querySelectorAll('.menu-item');
+
+        menuItems.forEach(function (menuItem) {
+            menuItem.addEventListener('click', function () {
+                 this.classList.remove('clicked');
+
+                // Ajouter la classe après une petite pause (10 ms)
+                setTimeout(() => {
+                    this.classList.add('clicked');
+                }, 10);
+                
+
+                // Le reste de votre code ici...
+            });
+        });
+    });
 </script>

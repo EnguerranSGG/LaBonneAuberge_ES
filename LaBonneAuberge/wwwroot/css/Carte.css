@@ -1,0 +1,19 @@
+.clicked{
+    
+    animation-name: style;
+    animation-duration: 0.5s;
+}
+
+
+
+@keyframes style{
+    0%{
+        transform: rotateY(0deg);
+    }
+    50%{
+        transform: rotateY(-180deg);
+    }
+    100%{
+        transform: rotateY(0deg);
+    }
+}
