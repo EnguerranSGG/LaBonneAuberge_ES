@@ -1,20 +1,26 @@
+h2 {
+    color: white;
+}
 
 .form-label {
-    color: #3e3a32;
+    color: white;
 }
 
 #btn_feedback_form {
-    background-color: rgb(232, 102, 69);
+    background-color: rgb(232, 102, 69); 
     border: 1px solid rgb(232, 102, 69);
 }
 
 #feedback {
     border: 1px solid white;
     border-radius: 10px;
+    background-color: rgba(0, 0, 0, .5);
 }
 
 #feedback p {
     padding-left: 1%;
+    color: white;
+    text-shadow: 3px 3px 0px black;
 }
 
 .Pseudo_Notation {
@@ -23,10 +29,6 @@
     background-image: url(/img/wood-horizontal.png);
     background-size: cover;
     background-repeat: no-repeat;
-}
-
-#feedback {
-    background-color: white;
 }
 
 .avis_h2 { 

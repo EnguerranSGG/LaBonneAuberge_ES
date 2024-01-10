@@ -39,22 +39,6 @@ p{
 
 }
 
-
-#Info_contact{
-  color: white;
-  text-shadow: 3px 3px 0px black;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-}
-
-#Info_contact div{
-  display: flex;
-  flex-direction: column;
-  align-items: space-around;
-}
-
 .navbar-nav .nav-link {
   color: white !important;
 }
