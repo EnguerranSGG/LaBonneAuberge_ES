@@ -3,38 +3,16 @@
     Layout = "~/Views/Shared/_Layout_HomePage.cshtml";
 }
 
+
 @{
     ViewData[""] = "Home Page";
 }
-<partial name="_Presentation.cshtml" id="presentation"/>        
+<partial name="_Presentation.cshtml" id="presentation"/>
 
 
     @await Html.PartialAsync("_Avis.cshtml", Model.FeedBacks)
-
-@model IEnumerable<LaBonneAuberge.Models.FeedBackModel>
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
-
-<aside>
-<div class="container mt-5">
-
-<h2 class="avis_h2">Les avis de nos chers cowboys</h2>
-
-@foreach (var feedBack in Model)
-{
-    <div class="container mt-5">
-    <section class="mb-3" id="feedback">
-    <div class="Pseudo_Notation">
-        <p>@feedBack.Pseudo_FeedBack <i class="lar la-star" data-value="1"></i><i class="lar la-star" data-value="2"></i><i class="lar la-star" data-value="3"></i><i class="lar la-star"data-value="4"></i><i class="lar la-star" data-value="5"></i><input type="hidden" value="@feedBack.Notation_FeedBack" name="old_notation" class="old_notation"></p>
-    </div>
-    <div class="FeedBack_Message">
-        <p>@feedBack.Message_FeedBack</p>
-    </div>
-    </section>
-    </div>
-}
-</div>
-</aside>
