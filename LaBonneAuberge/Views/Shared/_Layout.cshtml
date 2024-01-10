@@ -5,10 +5,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - LaBonneAuberge</title>
-     <link rel="icon" type="image/png" href="/img/logo.png">
+    <link rel="icon" type="image/png" href="/img/logo.png">
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha384-GLhlTQ8iS6tETFVz9UJcNsoIZ5YjG3/6pkjz5f+0eb4zj6aLlXip0Ulb4Q" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha384-GLhlTQ8iS6tETFVz9UJcNsoIZ5YjG3/6pkjz5f+0eb4zj6aLlXip0Ulb4Q" crossorigin="anonymous">
     <link rel="stylesheet" href="~/css/avis.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/presentation.css" asp-append-version="true" />
         <link rel="stylesheet" href="~/css/Carte.css" asp-append-version="true" />
@@ -19,18 +20,19 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bevan&family=Rye&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link rel="stylesheet"
+        href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
     <script src="https://kit.fontawesome.com/6af99936d7.js" crossorigin="anonymous"></script>
 </head>
 <style>
-    header{
-  border-bottom: 0.3vh solid rgba(255, 255, 255, 0)
-  background-repeat: no-repeat;
-  background-size:cover;
-  
-  border-image-width: 1200px 0px;
-}
+    header {
+        border-bottom: 0.3vh solid rgba(255, 255, 255, 0) background-repeat: no-repeat;
+        background-size: cover;
+
+        border-image-width: 1200px 0px;
+    }
 </style>
+
 <body>
     <header>
 
@@ -59,8 +61,7 @@
                 <div class="collapse navbar-collapse" id="leftNavbar">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link"
-                               href="/#presentation">Présentation</a>
+                            <a class="nav-link" href="/#presentation">Présentation</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" style="color: antiquewhite;" asp-area="" asp-controller="Home"
@@ -72,7 +73,11 @@
                                 asp-action="Reservation">Réservation</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark"  href="/#avis">Avis</a>
+                            <a class="nav-link text-dark" href="/#avis">Avis</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" style="color: antiquewhite;" asp-area="" asp-controller="Home"
+                                asp-action="FormAvis">Donnez votre avis</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Team">Notre
@@ -87,8 +92,7 @@
                                 asp-action="Contact">Contact</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home"
-                                asp-action="Contact">Fr</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Contact">Fr</a>
                         </li>
                     </ul>
                 </div>
