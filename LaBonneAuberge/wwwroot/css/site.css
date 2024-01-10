@@ -20,11 +20,11 @@ html {
 body {
   margin-bottom: 60px;
   margin:0px;
-  background-color: black;
-  background-image: url(/img/LA_Bonne_Auberge_3.webp);
+  background-color: rgb(247, 247, 247);
+  /* background-image: url(/img/LA_Bonne_Auberge_3.webp);
     background-size: cover;
     background-attachment: fixed;
- 
+  */
   
 }
 
