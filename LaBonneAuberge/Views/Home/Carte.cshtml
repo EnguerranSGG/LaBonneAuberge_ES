@@ -117,9 +117,16 @@
             });
         });
     });
-    document.addEventListener('mousemove', function (e) {
-        var customCursor = document.getElementById('custom-cursor');
-        customCursor.style.left = (e.pageX - customCursor.width / 2) + 'px';
-        customCursor.style.top = (e.pageY - customCursor.height / 2) + 'px';
-    });
+   var customCursor = document.getElementById('custom-cursor');
+
+        document.addEventListener('mousemove', function(e) {
+            customCursor.style.left = (e.pageX - customCursor.width / 2) + 'px';
+            customCursor.style.top = (e.pageY - customCursor.height / 2) + 'px';
+        });
+
+        document.addEventListener('scroll', function() {
+            // Mettez à jour la position de l'image pendant le défilement
+            customCursor.style.left = (event.pageX - customCursor.width / 2) + 'px';
+            customCursor.style.top = (event.pageY - customCursor.height / 2) + 'px';
+        });
 </script>
