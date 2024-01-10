@@ -21,6 +21,8 @@
 
 .marginContact {
     background-color: transparent !important;
+    margin-left:10px;
+    margin-right:10px;
 }
 
 .borderSimple{
