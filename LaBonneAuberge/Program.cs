@@ -8,18 +8,22 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
 
-builder.Services.AddDbContext<LaBonneAubergeContext>(options=>
-options.UseSqlite(builder.Configuration.GetConnectionString("LaBonneAubergeContext")
-    ?? throw new InvalidOperationException("Connection string LaBonneAubergeContext' not found.")));
+builder.Services.AddDbContext<LaBonneAubergeContext>(options =>
+    options.UseSqlite(builder.Configuration.GetConnectionString("LaBonneAubergeContext")
+        ?? throw new InvalidOperationException("Connection string 'LaBonneAubergeContext' not found.")));
 
-builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<LaBonneAubergeContext>();
+builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+    .AddEntityFrameworkStores<LaBonneAubergeContext>();
+
 var app = builder.Build();
-// using (var scope = app.Services.CreateScope())
-// {
-//  var services = scope.ServiceProvider;
-//  SeedData.Initialize(services);
-// }
-// Configure the HTTP request pipeline.
+
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+    SeedData.Initialize(services);
+}
+
+// Configure the HTTP request pipeline
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
@@ -29,9 +33,7 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
 app.UseRouting();
-
 app.UseAuthorization();
 
 app.MapControllerRoute(
