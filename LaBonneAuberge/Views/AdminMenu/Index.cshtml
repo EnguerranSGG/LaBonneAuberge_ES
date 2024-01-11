@@ -3,51 +3,52 @@
 @{
     ViewData["Title"] = "Index";
 }
+<div class="gestion">
+    <h1>Gestion des plats</h1>
 
-<h1>Index</h1>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+    <p>
+        <a class="link" asp-action="Create">Create New</a>
+    </p>
+</div>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Name)
+                Nom
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Description)
+                Description
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Price)
+                Prix
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Img)
+                Image
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Price)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Img)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Img)
+                </td>
+                <td>
+                    <a class="link" asp-action="Edit" asp-route-id="@item.Id">Éditer</a> |
+                    <a class="link" asp-action="Delete" asp-route-id="@item.Id">Supprimer</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

@@ -4,46 +4,45 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
+<div class="row" id="form_edition">
+    <div class="col-md-4" id="form_edition_inside">
+        <h1>Éditer</h1>
 
-<h4>FeedBackModel</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id_FeedBack" />
             <div class="form-group">
-                <label asp-for="Pseudo_FeedBack" class="control-label"></label>
+                <label asp-for="Pseudo_FeedBack" class="control-label">Pseudo</label>
                 <input asp-for="Pseudo_FeedBack" class="form-control" />
                 <span asp-validation-for="Pseudo_FeedBack" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Notation_FeedBack" class="control-label"></label>
+                <label asp-for="Notation_FeedBack" class="control-label">Note</label>
                 <input asp-for="Notation_FeedBack" class="form-control" />
                 <span asp-validation-for="Notation_FeedBack" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Email_FeedBack" class="control-label"></label>
+                <label asp-for="Email_FeedBack" class="control-label">E-mail</label>
                 <input asp-for="Email_FeedBack" class="form-control" />
                 <span asp-validation-for="Email_FeedBack" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Message_FeedBack" class="control-label"></label>
+                <label asp-for="Message_FeedBack" class="control-label">Commentaire</label>
                 <input asp-for="Message_FeedBack" class="form-control" />
                 <span asp-validation-for="Message_FeedBack" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" id="save_btn" value="Sauvegarder" class="btn btn-primary" />
             </div>
         </form>
+        <div>
+            <a class="link" asp-action="Index">Retour à la liste</a>
+        </div>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
