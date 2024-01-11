@@ -33,7 +33,7 @@ namespace LaBonneAuberge.Controllers
         {
             return View();
         }
-        public IActionResult Privacy()
+        public IActionResult Legal()
         {
             return View();
         }
