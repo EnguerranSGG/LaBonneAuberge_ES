@@ -8,5 +8,5 @@ public class Category
     public int Id { get; set; }
     public string? Nom { get; set; }
 
-    public ICollection<Menu> Menus { get; set; }
+    public ICollection<Menu>? Menus { get; set; }
 }
