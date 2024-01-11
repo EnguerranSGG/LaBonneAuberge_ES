@@ -19,7 +19,7 @@
     <p class="fs-3 background borderCustom2">Le meilleur endroit pour savourer des plats délicieux et une ambiance
         chaleureuse.</p>
 </div>
-
+<main role="main" id="main">
 <!-- Menu du jour -->
 <div class="row mt-4">
     <div class="col-md-12">
@@ -49,6 +49,7 @@
 </div>
 </div>
 <img id="custom-cursor" src="/img/test.png" alt="Custom Cursor">
+</main>
 
 <script>
     var audioElement = new Audio("/Sound/fire.mp3");
@@ -62,7 +63,7 @@
             var modal = $('<div class="modal fade" tabindex="-1" role="dialog">' +
                 '<div class="modal-dialog border" role="document">' +
                 '<div class="modal-content">' +
-                '<div class="modal-body">' +
+                '<div class="modal-body modalEffect">' +
                 '<img src="' + menuImgSrc + '" alt="Image de la modal" class="modal-image">' +
                 '<h5 class="mt-3 mb-4">' + menuName + ' </h5>' +
                 '<div class="menu-description">' + menuDescription + '</div>' +
@@ -130,3 +131,43 @@
             customCursor.style.top = (event.pageY - customCursor.height / 2) + 'px';
         });
 </script>
+<script>var mousedownTime;
+
+document.addEventListener('mousedown', function () {
+    mousedownTime = new Date().getTime();
+});
+
+document.addEventListener('mouseup', function () {
+    var mouseupTime = new Date().getTime();
+    var clickDuration = mouseupTime - mousedownTime;
+
+    if (clickDuration > 1000) {
+        // Le clic a duré plus de 2 secondes, affichez une autre image
+        afficherAutreImage();
+    }
+});
+
+function afficherAutreImage() {
+    // Logique pour afficher une autre image ici
+    var img = document.createElement('img');
+    img.src = '/img/assiette2.png';  // Remplacez cela par le chemin de votre autre image
+    img.alt = 'Autre image ajoutée au clic';
+    img.className = 'clickedImage';
+    var largeurImage = 100;
+    var hauteurImage = 100;
+    img.style.width = largeurImage + 'px';
+    img.style.height = hauteurImage + 'px';
+    img.style.left = (event.pageX - (largeurImage / 2)) + 'px';
+    img.style.top = (event.pageY - (hauteurImage / 2)) + 'px';
+    document.body.appendChild(img);
+    audioElement.currentTime = 0;
+    setTimeout(function () {
+        img.style.opacity = 0;
+        setTimeout(function () {
+            audioElement.play();
+        }, 10);
+    }, 10);
+    setTimeout(function () {
+        document.body.removeChild(img);
+    }, 2010);
+}</script>

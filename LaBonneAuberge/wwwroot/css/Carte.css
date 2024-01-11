@@ -107,3 +107,10 @@
     /* Ajustez la taille de l'image selon vos besoins */
     height: 128px;
 }
+.modalEffect{
+    background-image: url(/img/assiette2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 2px solid black;
+   
+}
