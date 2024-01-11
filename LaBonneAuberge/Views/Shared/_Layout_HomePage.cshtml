@@ -73,7 +73,9 @@
                                 asp-action="Contact">Contact</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Contact">Fr</a>
+                            <a class="nav-link text-dark" href="javascript:void(0);" onclick="changeLanguage()">
+                                <span id="languageLabel">FR</span>
+                            </a>
                         </li>
                     </ul>
                 </div>
@@ -114,5 +116,32 @@
     </script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
-
+<script>
+    function changeLanguage() {
+        var currentLanguage = localStorage.getItem('language');
+        if (currentLanguage === 'fr') {
+            document.documentElement.lang = 'en';
+            localStorage.setItem('language', 'en');
+        } else {
+            document.documentElement.lang = 'fr';
+            localStorage.setItem('language', 'fr');
+        }
+        var languageLabel = document.getElementById('languageLabel');
+        if (localStorage.getItem('language') === 'fr') {
+            languageLabel.textContent = 'FR';
+        } else {
+            languageLabel.textContent = 'EN';
+        }
+    }
+    if (!localStorage.getItem('language')) {
+        localStorage.setItem('language', 'fr');
+    }
+    document.documentElement.lang = localStorage.getItem('language');
+    var languageLabel = document.getElementById('languageLabel');
+    if (localStorage.getItem('language') === 'fr') {
+        languageLabel.textContent = 'FR';
+    } else {
+        languageLabel.textContent = 'EN';
+    }
+</script>
 </html>
