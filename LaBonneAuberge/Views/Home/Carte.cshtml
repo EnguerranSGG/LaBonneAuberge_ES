@@ -52,9 +52,17 @@
 </main>
 
 <script>
-    var audioElement = new Audio("/Sound/fire.mp3");
-    audioElement.volume = 0.2;
-     $(document).ready(function () {
+    var audioElements = [
+        new Audio("/Sound/fire.mp3"),
+        new Audio("/Sound/fire2.wav"),
+        new Audio("/Sound/fire3.wav")
+    ];
+
+    audioElements.forEach(function(audioElement) {
+        audioElement.volume = 0.2;
+    });
+
+    $(document).ready(function () {
         $('.menu-item').click(function () {
             var menuName = $(this).find('.menu-name').text();
             var menuPrice = $(this).find('.menu-price').text();
@@ -82,8 +90,14 @@
                 modal.find('.modal-image').hide();
                 modal.remove();
             });
+
+            // Jouez aléatoirement l'un des trois sons
+            var randomIndex = Math.floor(Math.random() * audioElements.length);
+            audioElements[randomIndex].currentTime = 0;
+            audioElements[randomIndex].play();
         });
     });
+
     function ajouterImage(event) {
         var img = document.createElement('img');
         img.src = '/img/balle.png';
@@ -96,17 +110,24 @@
         img.style.left = (event.pageX - (largeurImage / 2)) + 'px';
         img.style.top = (event.pageY - (hauteurImage / 2)) + 'px';
         document.body.appendChild(img);
-        audioElement.currentTime = 0;
+        
+        audioElements.forEach(function(audioElement) {
+            audioElement.currentTime = 0;
+        });
+
         setTimeout(function () {
             img.style.opacity = 0;
             setTimeout(function () {
-                audioElement.play();
+                var randomIndex = Math.floor(Math.random() * audioElements.length);
+                audioElements[randomIndex].play();
             }, 10);
         }, 10);
+
         setTimeout(function () {
             document.body.removeChild(img);
         }, 2010);
     }
+
     document.addEventListener('DOMContentLoaded', function () {
         var menuItems = document.querySelectorAll('.menu-item');
         menuItems.forEach(function (menuItem) {
@@ -118,18 +139,18 @@
             });
         });
     });
-   var customCursor = document.getElementById('custom-cursor');
 
-        document.addEventListener('mousemove', function(e) {
-            customCursor.style.left = (e.pageX - customCursor.width / 2) + 'px';
-            customCursor.style.top = (e.pageY - customCursor.height / 2) + 'px';
-        });
+    var customCursor = document.getElementById('custom-cursor');
 
-        document.addEventListener('scroll', function() {
-            // Mettez à jour la position de l'image pendant le défilement
-            customCursor.style.left = (event.pageX - customCursor.width / 2) + 'px';
-            customCursor.style.top = (event.pageY - customCursor.height / 2) + 'px';
-        });
+    document.addEventListener('mousemove', function(e) {
+        customCursor.style.left = (e.pageX - customCursor.width / 2) + 'px';
+        customCursor.style.top = (e.pageY - customCursor.height / 2) + 'px';
+    });
+
+    document.addEventListener('scroll', function() {
+        customCursor.style.left = (event.pageX - customCursor.width / 2) + 'px';
+        customCursor.style.top = (event.pageY - customCursor.height / 2) + 'px';
+    });
 </script>
 @* <script>var mousedownTime;
 
