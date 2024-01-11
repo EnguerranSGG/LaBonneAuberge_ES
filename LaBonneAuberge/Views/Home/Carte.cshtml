@@ -1,3 +1,8 @@
+
+@{
+    Layout = "~/Views/Shared/_Layout_Menu.cshtml";
+}
+
 @{
     ViewData["Title"] = "Carte";
 }
@@ -15,8 +20,9 @@
 
 <div class="container mt-5 pt-5 mb-5">
     <!-- Section de présentation texte -->
-    <h3 class="mt-5 mb-5 display-5 background borderCustom2">La carte</h3>
-    <p class="fs-3 background borderCustom2">Le meilleur endroit pour savourer des plats délicieux et une ambiance
+    
+    <h3 class="mt-5 mb-5 display-5 background borderCustom2 ">La carte</h3>
+    <p class="fs-3 background borderCustom2 ">Le meilleur endroit pour savourer des plats délicieux et une ambiance
         chaleureuse.</p>
 </div>
 <main role="main" id="main">
@@ -151,44 +157,5 @@
         customCursor.style.left = (event.pageX - customCursor.width / 2) + 'px';
         customCursor.style.top = (event.pageY - customCursor.height / 2) + 'px';
     });
+    
 </script>
-@* <script>var mousedownTime;
-
-document.addEventListener('mousedown', function () {
-    mousedownTime = new Date().getTime();
-});
-
-document.addEventListener('mouseup', function () {
-    var mouseupTime = new Date().getTime();
-    var clickDuration = mouseupTime - mousedownTime;
-
-    if (clickDuration > 1000) {
-        // Le clic a duré plus de 2 secondes, affichez une autre image
-        afficherAutreImage();
-    }
-});
-
-function afficherAutreImage() {
-    // Logique pour afficher une autre image ici
-    var img = document.createElement('img');
-    img.src = '/img/assiette2.png';  // Remplacez cela par le chemin de votre autre image
-    img.alt = 'Autre image ajoutée au clic';
-    img.className = 'clickedImage';
-    var largeurImage = 100;
-    var hauteurImage = 100;
-    img.style.width = largeurImage + 'px';
-    img.style.height = hauteurImage + 'px';
-    img.style.left = (event.pageX - (largeurImage / 2)) + 'px';
-    img.style.top = (event.pageY - (hauteurImage / 2)) + 'px';
-    document.body.appendChild(img);
-    audioElement.currentTime = 0;
-    setTimeout(function () {
-        img.style.opacity = 0;
-        setTimeout(function () {
-            audioElement.play();
-        }, 10);
-    }, 10);
-    setTimeout(function () {
-        document.body.removeChild(img);
-    }, 2010);
-}</script> *@
