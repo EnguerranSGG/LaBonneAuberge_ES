@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="htmlElement">
 
 <head>
     <meta charset="utf-8" />
@@ -12,7 +12,7 @@
         integrity="sha384-GLhlTQ8iS6tETFVz9UJcNsoIZ5YjG3/6pkjz5f+0eb4zj6aLlXip0Ulb4Q" crossorigin="anonymous">
     <link rel="stylesheet" href="~/css/avis.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/presentation.css" asp-append-version="true" />
-        <link rel="stylesheet" href="~/css/Carte.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/Carte.css" asp-append-version="true" />
 
     <link rel="stylesheet" href="~/css/Reservation.cshtml.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/Contact.cshtml.css" asp-append-version="true" />
@@ -83,28 +83,27 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Team">Notre
                                 équipe</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home"
-                                asp-action="Team">Recrutement</a>
-                        </li>
+                    
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home"
                                 asp-action="Contact">Contact</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Contact">Fr</a>
+                            <a class="nav-link text-dark" href="javascript:void(0);" onclick="changeLanguage()">
+                                <span id="languageLabel">FR</span>
+                            </a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
-    
-        @RenderBody()
-   
+
+    @RenderBody()
+
     <footer class="border-top footer text-muted">
         <div class="container d-flex justify-content-around flex-wrap">
-            &copy; 2023 - LaBonneAuberge - <a  asp-area="" asp-controller="Home" asp-action="Privacy">Crédits</a>
+            &copy; 2023 - LaBonneAuberge - <a asp-area="" asp-controller="Home" asp-action="Privacy">Crédits</a>
             <a href="">Liens réseaux</a>
             <a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a>
             <a asp-area="" asp-controller="Home" asp-action="Team">Notre équipe</a>
@@ -121,4 +120,35 @@
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 
+
+
+
+<script>
+    function changeLanguage() {
+        var currentLanguage = localStorage.getItem('language');
+        if (currentLanguage === 'fr') {
+            document.documentElement.lang = 'en';
+            localStorage.setItem('language', 'en');
+        } else {
+            document.documentElement.lang = 'fr';
+            localStorage.setItem('language', 'fr');
+        }
+        var languageLabel = document.getElementById('languageLabel');
+        if (localStorage.getItem('language') === 'fr') {
+            languageLabel.textContent = 'FR';
+        } else {
+            languageLabel.textContent = 'EN';
+        }
+    }
+    if (!localStorage.getItem('language')) {
+        localStorage.setItem('language', 'fr');
+    }
+    document.documentElement.lang = localStorage.getItem('language');
+    var languageLabel = document.getElementById('languageLabel');
+    if (localStorage.getItem('language') === 'fr') {
+        languageLabel.textContent = 'FR';
+    } else {
+        languageLabel.textContent = 'EN';
+    }
+</script>
 </html>
