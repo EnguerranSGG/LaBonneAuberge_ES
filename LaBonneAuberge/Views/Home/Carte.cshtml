@@ -60,7 +60,7 @@
             var menuPrice = $(this).find('.menu-price').text();
             var menuDescription = $(this).find('.menu-description').html();
             var menuImgSrc = $(this).find('.menu-img').attr('src');
-            var modal = $('<div class="modal fade" tabindex="-1" role="dialog">' +
+            var modal = $('<div class="modal fade modalEffect2" tabindex="-1" role="dialog">' +
                 '<div class="modal-dialog border" role="document">' +
                 '<div class="modal-content">' +
                 '<div class="modal-body modalEffect">' +
@@ -131,7 +131,7 @@
             customCursor.style.top = (event.pageY - customCursor.height / 2) + 'px';
         });
 </script>
-<script>var mousedownTime;
+@* <script>var mousedownTime;
 
 document.addEventListener('mousedown', function () {
     mousedownTime = new Date().getTime();
@@ -170,4 +170,4 @@ function afficherAutreImage() {
     setTimeout(function () {
         document.body.removeChild(img);
     }, 2010);
-}</script>
+}</script> *@

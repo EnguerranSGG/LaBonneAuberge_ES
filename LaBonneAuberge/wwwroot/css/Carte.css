@@ -112,5 +112,18 @@
     background-repeat: no-repeat;
     background-size: cover;
     border: 2px solid black;
+    
    
+}
+.modalEffect2{
+    animation-name: effect;
+    animation-duration: 0.5s;
+}
+@keyframes effect{
+    0%{
+        transform: scale(0%);
+    }
+    100%{
+        transform: scale(100%);
+    }
 }
