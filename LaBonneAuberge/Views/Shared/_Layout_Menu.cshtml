@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" id="htmlElement">
 
 <head>
@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="~/css/avis.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/presentation.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/Carte.css" asp-append-version="true" />
-
+ <link rel="stylesheet" href="~/css/_Layout_HomePage.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/Reservation.cshtml.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/Contact.cshtml.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/LaBonneAuberge.styles.css" asp-append-version="true" />
@@ -24,6 +24,7 @@
         href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
     <script src="https://kit.fontawesome.com/6af99936d7.js" crossorigin="anonymous"></script>
 </head>
+
 <style>
     header {
         border-bottom: 0.3vh solid rgba(255, 255, 255, 0) background-repeat: no-repeat;
@@ -31,6 +32,21 @@
 
         border-image-width: 1200px 0px;
     }
+    body{
+       background-color:  black;
+       background-image: url(/img/desert.jpg);
+       overflow-x: hidden;
+       }
+       a{
+        font-family: 'Bevan', serif;
+        color:black;
+       }
+       .black{
+        color:black;
+       }
+       footer{
+        overflow-y: hidden;
+       }
 </style>
 
 <body>
@@ -99,11 +115,11 @@
         </nav>
     </header>
 
-    @RenderBody()
+     @RenderBody()
 
-    <footer class="border-top footer text-muted">
+    <footer class="border-top footer text-muted background">
         <div class="container d-flex justify-content-around flex-wrap">
-            &copy; 2023 - LaBonneAuberge - <a asp-area="" asp-controller="Home" asp-action="Privacy">Crédits</a>
+            &copy; <p class="black">2023 - LaBonneAuberge</p> - <a asp-area="" asp-controller="Home" asp-action="Privacy">Crédits</a>
             <a href="">Liens réseaux</a>
             <a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a>
             <a asp-area="" asp-controller="Home" asp-action="Team">Notre équipe</a>
