@@ -125,6 +125,7 @@ button.accept-policy {
 
 .resa:hover {
   color: #ffffff;
+  border-color: #b63f36;
 }
 
 @media (max-width: 575.98px) {

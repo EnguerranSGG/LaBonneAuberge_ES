@@ -1,28 +1,35 @@
+@{
+    Layout = "~/Views/Shared/_Layout_Reservation.cshtml";
+}
+
 @model IEnumerable<LaBonneAuberge.Models.FeedBackModel>
 
 @{
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<div class="gestion">
+    <h1 style="color: black;">Gestions des avis :</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+    <p>
+        <a class="link" asp-action="Create">Créer un nouveau commentaire</a>
+    </p>
+</div>
+
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Pseudo_FeedBack)
+                Pseudo
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Notation_FeedBack)
+                Note
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Email_FeedBack)
+                E-mail
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Message_FeedBack)
+                Commentaire
             </th>
             <th></th>
         </tr>
@@ -43,9 +50,8 @@
                 @Html.DisplayFor(modelItem => item.Message_FeedBack)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id_FeedBack">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id_FeedBack">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id_FeedBack">Delete</a>
+                <a class="link" asp-action="Edit" asp-route-id="@item.Id_FeedBack">Éditer</a> |
+                <a class="link" asp-action="Delete" asp-route-id="@item.Id_FeedBack">Supprimer</a>
             </td>
         </tr>
 }

@@ -1,53 +1,56 @@
+@{
+    Layout = "~/Views/Shared/_Layout_Reservation.cshtml";
+}
+
 @model LaBonneAuberge.Models.TeamList
 
 @{
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
-
-<h4>TeamList</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
+<div class="row" id="form_edition">
+    <div class="col-md-4" id="form_edition_inside">
+        <h1>Ajouter</h1>
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
+                <label asp-for="Name" class="control-label">Prénom</label>
                 <input asp-for="Name" class="form-control" />
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Age" class="control-label"></label>
+                <label asp-for="Age" class="control-label">Âge</label>
                 <input asp-for="Age" class="form-control" />
                 <span asp-validation-for="Age" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Job" class="control-label"></label>
+                <label asp-for="Job" class="control-label">Job</label>
                 <input asp-for="Job" class="form-control" />
                 <span asp-validation-for="Job" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Description" class="control-label"></label>
+                <label asp-for="Description" class="control-label">Description</label>
                 <input asp-for="Description" class="form-control" />
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Photo" class="control-label"></label>
+                <label asp-for="Photo" class="control-label">Photo</label>
                 <input asp-for="Photo" class="form-control" />
                 <span asp-validation-for="Photo" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" id="save_btn" value="Create" class="btn btn-primary" />
+            </div>
+            <div>
+                <a class="link" asp-action="Index">Back to List</a>
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

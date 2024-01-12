@@ -17,30 +17,32 @@
     height:70vh;
     
 }
-
+ .colorLabel{
+        color:black;
+    }
 </style>
 
 <div class="container mt-5 cuirmoustache">
-    <h2 id="avis" class="mb-4">Donnez-nous votre avis !</h2>
+    <h2 class="colorLabel" id="avis" class="mb-4">Donnez-nous votre avis !</h2>
     <form asp-action="FormAvis" method="post">
         <div class="mb-3">
-            <label for="inputEmail" asp-for="Email_FeedBack" class="form-label">Adresse mail</label>
+            <label class="colorLabel"  for="inputEmail" asp-for="Email_FeedBack" class="form-label">Adresse mail</label>
             <input type="email" asp-for="Email_FeedBack" class="form-control" id="inputEmail" placeholder="name@example.com (uniquement visible par le restaurant)" required>
             <span asp-validation-for="Email_FeedBack" class="text-danger"></span>
         </div>
         <div class="mb-3">
-            <label for="inputPseudo" asp-for="Pseudo_FeedBack" class="form-label">Pseudo</label>
+            <label class="colorLabel"  for="inputPseudo" asp-for="Pseudo_FeedBack" class="form-label">Pseudo</label>
             <input type="text" asp-for="Pseudo_FeedBack" class="form-control" id="inputPseudo" placeholder="Pseudo sous lequel vous apparaîtrez." required>
             <span asp-validation-for="Pseudo_FeedBack" class="text-danger"></span>
         </div>
         <div class="mb-3">
-            <label for="notation" asp-for="Notation_FeedBack" class="form-label">Note</label>
+            <label class="colorLabel"  for="notation" asp-for="Notation_FeedBack" class="form-label">Note</label>
             <i class="lar la-star" data-value="1"></i><i class="lar la-star" data-value="2"></i><i class="lar la-star" data-value="3"></i><i class="lar la-star"data-value="4"></i><i class="lar la-star" data-value="5"></i>
             <input type="hidden" asp-for="Notation_FeedBack" name="notation" id="notation" required>
             <span asp-validation-for="Notation_FeedBack" class="text-danger"></span>
         </div>
         <div class="mb-3">
-            <label for="inputComments" asp-for="Message_FeedBack" class="form-label">Commentaire</label>
+            <label class="colorLabel"  for="inputComments" asp-for="Message_FeedBack" class="form-label">Commentaire</label>
             <textarea class="form-control" asp-for="Message_FeedBack" id="inputComments" rows="4" placeholder="Rédigez votre commentaire..."></textarea>
             <span asp-validation-for="Message_FeedBack" class="text-danger"></span>
         </div>

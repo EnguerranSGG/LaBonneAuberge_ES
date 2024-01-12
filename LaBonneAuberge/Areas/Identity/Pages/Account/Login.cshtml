@@ -2,15 +2,15 @@
 @model LoginModel
 
 @{
-    ViewData["Title"] = "Log in";
+    ViewData["Title"] = "Connecte-toi cowboy !";
 }
 
-<h1>@ViewData["Title"]</h1>
 <div class="row justify-content-center">
-    <div class="col-md-6">
+    <div class="col-md-6" id="login">
+        <h1>@ViewData["Title"]</h1>
         <section>
             <form id="account" method="post">
-                <h2>Use a local account to log in.</h2>
+                <h2>Utilise un compte local pour te connecter</h2>
                 <hr />
                 <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
                 <div class="form-floating mb-3">
@@ -30,17 +30,17 @@
                     </label>
                 </div>
                 <div>
-                    <button id="login-submit" type="submit" class="w-100 btn btn-lg btn-primary">Log in</button>
+                    <button id="login-submit" type="submit" class="w-100 btn btn-lg btn-primary">Connexion</button>
                 </div>
                 <div>
                     <p>
-                        <a id="forgot-password" asp-page="./ForgotPassword">Forgot your password?</a>
+                        <a class="login_link" id="forgot-password" asp-page="./ForgotPassword">Mot de passe oublié?</a>
                     </p>
                     <p>
-                        <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Register as a new user</a>
+                        <a class="login_link" asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Register as a new user</a>
                     </p>
                     <p>
-                        <a id="resend-confirmation" asp-page="./ResendEmailConfirmation">Resend email confirmation</a>
+                        <a class="login_link" id="resend-confirmation" asp-page="./ResendEmailConfirmation">Ré-envoyer le mail de confirmation</a>
                     </p>
                 </div>
             </form>

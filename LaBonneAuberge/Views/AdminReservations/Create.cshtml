@@ -1,0 +1,78 @@
+@{
+    Layout = "~/Views/Shared/_Layout_Reservation.cshtml";
+}
+
+@model LaBonneAuberge.Models.Reservation
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="row" id="form_edition">
+    <div class="col-md-4" id="form_edition_inside">
+        <h1>Ajouter</h1>
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Nom" class="control-label"></label>
+                <input asp-for="Nom" class="form-control" />
+                <span asp-validation-for="Nom" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Date" class="control-label"></label>
+                <input asp-for="Date" class="form-control" />
+                <span asp-validation-for="Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Time" class="control-label">Heure</label>
+                <input asp-for="Time" class="form-control" />
+                <span asp-validation-for="Time" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NombreAdultes" class="control-label">Nombre d'adultes</label>
+                <input asp-for="NombreAdultes" class="form-control" />
+                <span asp-validation-for="NombreAdultes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NombreEnfants" class="control-label">Nombre d'enfants</label>
+                <input asp-for="NombreEnfants" class="form-control" />
+                <span asp-validation-for="NombreEnfants" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NumTel" class="control-label">Téléphone</label>
+                <input asp-for="NumTel" class="form-control" />
+                <span asp-validation-for="NumTel" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Message" class="control-label"></label>
+                <input asp-for="Message" class="form-control" />
+                <span asp-validation-for="Message" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Anniversaire" /> @Html.DisplayNameFor(model => model.Anniversaire)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Fumeur" /> @Html.DisplayNameFor(model => model.Fumeur)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Ajouter" id="save_btn" class="btn btn-primary" />
+            </div>
+        </form>
+        <div>
+    <a class="link" asp-action="Index">Retour à la liste</a>
+</div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
