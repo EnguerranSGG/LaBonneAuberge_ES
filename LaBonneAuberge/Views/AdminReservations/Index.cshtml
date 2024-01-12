@@ -1,14 +1,18 @@
-@model IEnumerable<LaBonneAuberge.Models.Reservation>
+@{
+    Layout = "~/Views/Shared/_Layout_Reservation.cshtml";
+}
+
+@model IEnumerable<LaBonneAuberge.Models.Reservation>    
 
 @{
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<div class="gestion"><h1 style="color: black;">Gestion des reservations :</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
-</p>
+    <a class="link" asp-action="Create">Ajouter une nouvelles reservations</a>
+</p></div>
 <table class="table">
     <thead>
         <tr>
@@ -19,16 +23,16 @@
                 @Html.DisplayNameFor(model => model.Date)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Time)
+                Heure
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.NombreAdultes)
+                Nombre d'adultes
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.NombreEnfants)
+                Nombre d'enfants
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.NumTel)
+                Téléphone
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Email)

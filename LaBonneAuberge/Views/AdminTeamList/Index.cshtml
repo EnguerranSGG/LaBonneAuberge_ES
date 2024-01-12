@@ -1,10 +1,14 @@
+@{
+    Layout = "~/Views/Shared/_Layout_Reservation.cshtml";
+}
+
 @model IEnumerable<LaBonneAuberge.Models.TeamList>
 
 @{
     ViewData["Title"] = "Index";
 }
 
-<div class="gestion"><h1>Gestion du personnel :</h1>
+<div class="gestion"><h1 style="color: black;">Gestion du personnel :</h1>
 
 <p>
     <a class="link" asp-action="Create">Nouveau membre</a>
