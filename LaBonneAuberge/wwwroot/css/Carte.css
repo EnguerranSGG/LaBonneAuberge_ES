@@ -1,0 +1,148 @@
+.clicked {
+
+    animation-name: style;
+    animation-duration: 0.35s;
+}
+
+
+
+@keyframes style {
+    0% {
+        transform: rotateY(0deg);
+    }
+
+    50% {
+        transform: rotateY(-180deg);
+    }
+
+    100% {
+        transform: rotateY(0deg);
+    }
+}
+
+.menu-section {
+    display: none;
+}
+
+.modal-image {
+    display: none;
+    width: 460px;
+}
+
+.menu-img {
+    width: 150px;
+
+    margin-bottom: 20px;
+    border-radius: 30%;
+}
+
+.modal.show .modal-image {
+    display: block;
+}
+
+.menu-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    cursor: none;
+    border-image: url(/img/border.png)30;
+}
+
+.menu-item {
+    border: 2px solid black;
+    padding: 10px;
+    padding-bottom: 380px;
+    margin: 10px;
+    width: 300px;
+    min-height: 100px;
+    max-height: 200px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url(/img/assiette2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: none;
+}
+
+.background {
+    background-image: url(/img/assiette.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.menu-item:hover {
+    background-color: rgb(243, 227, 211);
+
+    transform: scale(1.05);
+}
+
+.initial-hidden {
+    display: none;
+}
+
+
+.borderCustom {
+
+    border: 10px solid #ccc;
+    border-image: url(/img/border.png)50;
+    margin-left: 30px;
+}
+
+.borderCustom2 {
+
+    border: 20px solid #ccc;
+    border-image: url(/img/BorderWood-min.png)150;
+    margin-left: 30px;
+    cursor: none;
+}
+
+.borderCustom3 {
+
+    border: 20px solid #ccc;
+    border-image: url(/img/BorderWood-min.png)90 0 150 0;
+    margin-left: 30px;
+    
+}
+
+.clickedImage {
+    position: absolute;
+    opacity: 1;
+    transition: opacity 3s ease;
+}
+
+#custom-cursor {
+    position: absolute;
+    pointer-events: none;
+    width: 128px;
+    /* Ajustez la taille de l'image selon vos besoins */
+    height: 128px;
+}
+
+.modalEffect {
+    background-image: url(/img/assiette2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 2px solid black;
+
+
+}
+
+.modalEffect2 {
+    animation-name: effect;
+    animation-duration: 0.5s;
+}
+
+@keyframes effect {
+    0% {
+        transform: scale(0%);
+    }
+
+    100% {
+        transform: scale(100%);
+    }
+}
+.backdesert{
+background-image: url(/img/backDesert.jpg);
+}

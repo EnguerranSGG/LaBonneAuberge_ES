@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" id="htmlElement">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - LaBonneAuberge</title>
+    <link rel="icon" type="image/png" href="/img/logo.png">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha384-GLhlTQ8iS6tETFVz9UJcNsoIZ5YjG3/6pkjz5f+0eb4zj6aLlXip0Ulb4Q" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/css/avis.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/presentation.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/Carte.css" asp-append-version="true" />
+ <link rel="stylesheet" href="~/css/_Layout_HomePage.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/Reservation.cshtml.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/Contact.cshtml.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/LaBonneAuberge.styles.css" asp-append-version="true" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bevan&family=Rye&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <script src="https://kit.fontawesome.com/6af99936d7.js" crossorigin="anonymous"></script>
+</head>
+
+<style>
+    header {
+        border-bottom: 0.3vh solid rgba(255, 255, 255, 0) background-repeat: no-repeat;
+        background-size: cover;
+
+        border-image-width: 1200px 0px;
+    }
+    body{
+       background-color:  black;
+       background-image: url(/img/desert.jpg);
+       overflow-x: hidden;
+       }
+       .lien{
+        font-family: 'Bevan', serif;
+        color:black;
+       }
+       .black{
+        color:black;
+       }
+       footer{
+        overflow-y: hidden;
+       }
+</style>
+
+<body>
+    <header>
+
+        <nav class="navbar sticky-top navbar-light">
+            <div class="container-fluid justify-content-between">
+
+                <!-- Navbar Toggler (Always visible, aligned to the left) -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#leftNavbar"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span><i class="fa-solid fa-burger" style="color:white;"></i></span>
+                </button>
+
+
+                <!-- Logo (Centered) -->
+
+                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand"><img class="logo"
+                        src="/img/La_bonne_aubergelogo_1.webp" alt=""></a>
+
+                <!-- Small Menu with 2 Links (Aligned to the right) -->
+                <div class="" id="RightNavbar">
+                    <a class="nav-link"><i class="fa-brands fa-instagram" class="logo_header"
+                            style="color:white;"></i></a>
+                </div>
+
+
+                <div class="collapse navbar-collapse" id="leftNavbar">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/#presentation">Présentation</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" style="color: antiquewhite;" asp-area="" asp-controller="Home"
+                                asp-action="Carte">Carte
+                                du moment</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home"
+                                asp-action="Reservation">Réservation</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="/#avis">Avis</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" style="color: antiquewhite;" asp-area="" asp-controller="Home"
+                                asp-action="FormAvis">Donnez votre avis</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Team">Notre
+                                équipe</a>
+                        </li>
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home"
+                                asp-action="Contact">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="javascript:void(0);" onclick="changeLanguage()">
+                                <span id="languageLabel">FR</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+     @RenderBody()
+
+    <footer class="border-top footer text-muted background">
+        <div class="container d-flex justify-content-around flex-wrap">
+            &copy; <p class="black">2023 - LaBonneAuberge</p> - <a class="lien" asp-area="" asp-controller="Home" asp-action="Privacy">Crédits</a>
+            <a class="lien" href="">Liens réseaux</a>
+            <a class="lien" asp-area="" asp-controller="Home" asp-action="Contact">Contact</a>
+            <a  class="lien" asp-area="" asp-controller="Home" asp-action="Team">Notre équipe</a>
+            <a  class="lien" asp-area="" asp-controller="Home" asp-action="Legal">Mentions légales</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-e4dDf2Ac6wiApFFjzDZ5v5By5uqqKj1g9p5o0eLuMOj6u6z5+bPQ5GJ6ccFV9Ur2"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+
+
+
+<script>
+    function changeLanguage() {
+        var currentLanguage = localStorage.getItem('language');
+        if (currentLanguage === 'fr') {
+            document.documentElement.lang = 'en';
+            localStorage.setItem('language', 'en');
+        } else {
+            document.documentElement.lang = 'fr';
+            localStorage.setItem('language', 'fr');
+        }
+        var languageLabel = document.getElementById('languageLabel');
+        if (localStorage.getItem('language') === 'fr') {
+            languageLabel.textContent = 'FR';
+        } else {
+            languageLabel.textContent = 'EN';
+        }
+    }
+    if (!localStorage.getItem('language')) {
+        localStorage.setItem('language', 'fr');
+    }
+    document.documentElement.lang = localStorage.getItem('language');
+    var languageLabel = document.getElementById('languageLabel');
+    if (localStorage.getItem('language') === 'fr') {
+        languageLabel.textContent = 'FR';
+    } else {
+        languageLabel.textContent = 'EN';
+    }
+</script>
+</html>

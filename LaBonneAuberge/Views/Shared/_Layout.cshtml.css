@@ -10,6 +10,17 @@ header{
 
   background-repeat: no-repeat;
   background-size:cover;  
+  animation-name:transition;
+  animation-duration: 2s;
+ 
+}
+@keyframes transition{
+  from{
+    opacity:0%;
+  }
+  to{
+    opacity:100%;
+  }
 }
   
 .fa-solid {
@@ -22,7 +33,7 @@ header{
   /* background-attachment: fixed; */
 
 .navbar{
-  background-color : rgb(62, 58, 50);
+  background-color : transparent;
   background-position: 100px;
 }
 
@@ -94,7 +105,5 @@ button.accept-policy {
     font-size: 4vh;
   }
 
-  header{
-    border-bottom: 2vh solid black;
-  }
+
 }

@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using Microsoft.EntityFrameworkCore;
 using LaBonneAuberge.Data;
-
+using LaBonneAuberge.ViewModels;
 namespace LaBonneAuberge.Controllers
 {
     public class HomeController : Controller
@@ -16,15 +16,24 @@ namespace LaBonneAuberge.Controllers
             _logger = logger;
             _context = context;
         }
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var viewModel = new HomeViewModel
+            {
+                // Chargement des produits depuis la base de donnée
+                Categories = await _context.Categories.Include(c => c.Menus).ToListAsync(),
+                FeedBacks = await _context.FeedBacks.ToListAsync()
+
+            };
+            return View(viewModel);
         }
+
+
         public IActionResult Presentation()
         {
             return View();
         }
-        public IActionResult Privacy()
+        public IActionResult Legal()
         {
             return View();
         }
@@ -53,19 +62,21 @@ namespace LaBonneAuberge.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
+        public IActionResult FormAvis()
+        {
+            return View();
+        }
         public IActionResult Reservation()
         {
             return View();
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-         
-
         public async Task<IActionResult> Reservation([Bind("Nom,Date,Time,NombreAdultes,NombreEnfants,NumTel,Email,Message,Anniversaire,Fumeur")] Reservation reservation)
-        {            
+        {
             if (ModelState.IsValid)
             {
-                 if (reservation.Date < DateOnly.FromDateTime(DateTime.Now))
+                if (reservation.Date < DateOnly.FromDateTime(DateTime.Now))
                 {
                     ModelState.AddModelError("Date", "La date doit être dans le futur");
                     return View(reservation);
@@ -86,6 +97,29 @@ namespace LaBonneAuberge.Controllers
             }
 
             return View(reservation);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> FormAvis([Bind("Pseudo_FeedBack,Notation_FeedBack,Email_FeedBack,Message_FeedBack")] FeedBackModel feedBackModel)
+        {
+            if (ModelState.IsValid)
+            {
+                Console.WriteLine(feedBackModel.Notation_FeedBack);
+                _context.Add(feedBackModel);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            
+            foreach (var modelStateEntry in ModelState.Values)
+            {
+                foreach (var error in modelStateEntry.Errors)
+                {
+                    Console.WriteLine($"Erreur de modèle: {error.ErrorMessage}");
+                }
+            }
+            
+            return View(feedBackModel);
         }
         public IActionResult Contact()
         {

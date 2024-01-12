@@ -1,4 +1,5 @@
-﻿@{
+﻿@model LaBonneAuberge.ViewModels.HomeViewModel
+@{
     Layout = "~/Views/Shared/_Layout_HomePage.cshtml";
 }
 
@@ -6,6 +7,10 @@
 @{
     ViewData[""] = "Home Page";
 }
+<partial name="_Presentation.cshtml" id="presentation"/>
+
+
+    @await Html.PartialAsync("_Avis.cshtml", Model.FeedBacks)
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>

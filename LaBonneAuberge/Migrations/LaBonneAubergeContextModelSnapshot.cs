@@ -55,18 +55,15 @@ namespace LaBonneAuberge.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Email_FeedBack")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Message_FeedBack")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<int>("Notation_FeedBack")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Pseudo_FeedBack")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id_FeedBack");
