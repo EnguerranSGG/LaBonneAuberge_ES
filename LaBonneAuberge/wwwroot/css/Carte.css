@@ -143,3 +143,6 @@
         transform: scale(100%);
     }
 }
+.backdesert{
+background-image: url(/img/backDesert.jpg);
+}
