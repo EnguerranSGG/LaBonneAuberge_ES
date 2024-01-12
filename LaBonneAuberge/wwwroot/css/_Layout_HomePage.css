@@ -109,6 +109,15 @@ button.accept-policy {
   width: 20vw;
 }
 
+.navbarre2 {
+  background-color: rgba(0, 0, 0, 0.11);
+  opacity: 0.8;
+  position: sticky;
+}
+.log2 {
+  width: 10vw;
+}
+
 @media (max-width: 575.98px) {
   .logo {
     width: 35vw;
