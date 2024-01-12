@@ -13,7 +13,6 @@ public class Reservation
     public TimeOnly Time {get; set;}
     public int NombreAdultes { get; set; }
     public int NombreEnfants { get; set; }
-    public bool Fumeur { get; set; }
     public int NumTel { get; set; }
     public string? Email { get; set; }
     public string? Message { get; set; }

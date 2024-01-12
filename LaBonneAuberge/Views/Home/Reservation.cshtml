@@ -11,6 +11,18 @@
 @if (TempData["SuccessMessage"] != null) {
 <p>@TempData["SuccessMessage"]</p>
 }
+@* <form asp-action="Create" method="post">
+ <div>
+ <label asp-for="Nom"></label>
+ <input asp-for="Nom" />
+ <span asp-validation-for="Nom" class="text-danger"></span>
+ </div>
+ <div>
+ <label asp-for="Email"></label>
+ <textarea asp-for="Email"></textarea>
+ </div>
+ <button type="submit">Envoyer</button>
+</form> *@
 <style>
     .marginright{
         margin-right: 5%;
@@ -20,7 +32,9 @@
         color:black;
     }
 </style>
-<div id="booking">
+
+<div id="booking" class="section">
+    <div class="section-center">
         <div class="container">
             <div class="row">
                 <div class="col-md-7 col-md-push-5">
@@ -82,6 +96,17 @@
                                 </div>
                             </div>
                             <div class="row">
+                                @* <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <span class="form-label">Rooms</span>
+                                        <select class="form-control">
+                                            <option>1</option> 
+                                            <option>2</option>
+                                            <option>3</option>
+                                        </select>
+                                        <span class="select-arrow"></span>
+                                    </div>
+                                </div> *@
                                 <div class="col-sm-4">
                                     <div class="form-group">
                                         <label class="colorLabel" asp-for="NombreAdultes" class="form-label">Adultes</label>
@@ -105,7 +130,7 @@
                                     </div>
                                 </div>
                             </div>
-                             <div class="col-md-12">
+                             <div class="col-md-4 col-md-pull-5">
                                     <div class="form-group">
                                         <label class="colorLabel" asp-for="Message" class="form-label">Message</label>
                                         <textarea asp-for="Message" class="form-control w-100" placeholder="Allergies, etc..."></textarea>
@@ -118,16 +143,16 @@
                                 <input class="colorLabel" asp-for="Anniversaire" type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
                                 <label class="colorLabel" asp-for="Anniversaire" class="btn btn-outline-primary" for="btncheck1">Anniversaire</label>
 
-                                @* <input asp-for="Fumeur" type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
-                                <label asp-for="Fumeur" class="btn btn-outline-primary" for="btncheck2">Fumeur</label> *@
+                                @* <input asp-for="Fumeur" type="checkbox" class="btn-check" id="btncheck2" autocomplete="off"> *@
+                                @* <label asp-for="Fumeur" class="btn btn-outline-primary" for="btncheck2">Fumeur</label> *@
                             </div>
                             <div class="form-btn">
-                                <button class="submit-btn">Réserver</button>
+                                <button class="submit-btn">Check availability</button>
                             </div>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
-
+    </div>
 </div>
