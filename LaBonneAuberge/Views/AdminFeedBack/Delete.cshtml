@@ -1,45 +1,47 @@
+@{
+    Layout = "~/Views/Shared/_Layout_Reservation.cshtml";
+}
+
 @model LaBonneAuberge.Models.FeedBackModel
 
 @{
     ViewData["Title"] = "Delete";
 }
 
-<h1>Delete</h1>
+<div id="form_edition">
+    <h1>Suppression</h1>
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>FeedBackModel</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Pseudo_FeedBack)
+    <h3>T'es sûr que tu veux liquider ce plat?</h3>
+        <div><dt class = "col-sm-2">
+            Pseudo
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Pseudo_FeedBack)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Notation_FeedBack)
+            Note
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Notation_FeedBack)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Email_FeedBack)
+            Email
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Email_FeedBack)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Message_FeedBack)
+            Commentaire
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Message_FeedBack)
         </dd>
     </dl>
+    </div>
     
     <form asp-action="Delete">
         <input type="hidden" asp-for="Id_FeedBack" />
         <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
+        <a class="link" asp-action="Index">Back to List</a>
     </form>
 </div>

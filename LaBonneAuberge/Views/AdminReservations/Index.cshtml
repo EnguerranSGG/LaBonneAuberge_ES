@@ -1,0 +1,92 @@
+@{
+    Layout = "~/Views/Shared/_Layout_Reservation.cshtml";
+}
+
+@model IEnumerable<LaBonneAuberge.Models.Reservation>    
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="gestion"><h1 style="color: black;">Gestion des reservations :</h1>
+
+<p>
+    <a class="link" asp-action="Create">Ajouter une nouvelles reservations</a>
+</p></div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th>
+                Heure
+            </th>
+            <th>
+                Nombre d'adultes
+            </th>
+            <th>
+                Nombre d'enfants
+            </th>
+            <th>
+                Téléphone
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Message)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Anniversaire)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fumeur)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Time)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreAdultes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreEnfants)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumTel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Message)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Anniversaire)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fumeur)
+            </td>
+            <td>
+                <a class="link" asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a class="link" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
