@@ -19,6 +19,11 @@
     <script src="https://kit.fontawesome.com/6af99936d7.js" crossorigin="anonymous"></script>
 
 </head>
+<style>
+    h1 {
+        color: black;
+    }
+</style>
 
 <body>
     <header class="Header_HomePage">
@@ -89,7 +94,7 @@
             </p>
         </section>
     </header>
-            <nav class="navbar sticky-top navbarre2">
+    <nav class="navbar sticky-top navbarre2">
         <div class="container-fluid justify-content-between sticky-top bkgrnd">
 
             <!-- Navbar Toggler (Always visible, aligned to the left) -->
@@ -104,46 +109,46 @@
 
             <!-- Small Menu with 2 Links (Aligned to the right) -->
             <div class="" id="RightNavbar">
-                <a class="nav-link"><i class="fa-brands fa-instagram" class="logo_header" style="color:rgb(0, 0, 0);"></i></a>
+                <a class="nav-link"><i class="fa-brands fa-instagram" class="logo_header"
+                        style="color:rgb(0, 0, 0);"></i></a>
             </div>
 
 
             <div class="collapse navbar-collapse" id="leftNavbar">
                 <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="/#presentation">Présentation</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" style="color: antiquewhite;" asp-area="" asp-controller="Home"
-                                asp-action="Carte">Carte
-                                du moment</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home"
-                                asp-action="Reservation">Réservation</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" href="/#avis">Avis</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" style="color: antiquewhite;" asp-area="" asp-controller="Home"
-                                asp-action="FormAvis">Donnez votre avis</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Team">Notre
-                                équipe</a>
-                        </li>
-                    
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home"
-                                asp-action="Contact">Contact</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" href="javascript:void(0);" onclick="changeLanguage()">
-                                <span id="languageLabel">FR</span>
-                            </a>
-                        </li>
-                    </ul>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/#presentation">Présentation</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" style="color: antiquewhite;" asp-area="" asp-controller="Home"
+                            asp-action="Carte">Carte
+                            du moment</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home"
+                            asp-action="Reservation">Réservation</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="/#avis">Avis</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" style="color: antiquewhite;" asp-area="" asp-controller="Home"
+                            asp-action="FormAvis">Donnez votre avis</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Team">Notre
+                            équipe</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="javascript:void(0);" onclick="changeLanguage()">
+                            <span id="languageLabel">FR</span>
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>
@@ -178,7 +183,7 @@
     </script>
     <script>
 
-        $(window).scroll(function(){
+        $(window).scroll(function () {
             $(".Header_HomePage").css("opacity", 1 - $(window).scrollTop() / 390)
         });
 
@@ -213,4 +218,5 @@
         languageLabel.textContent = 'EN';
     }
 </script>
+
 </html>
