@@ -9,7 +9,7 @@ html {
 }
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #cecece;
 }
 
 html {
@@ -27,10 +27,13 @@ body {
   
 }
 
-
+.logo {
+  width: 20vw;
+}
 
 h3, h2, h1{
   font-family: 'Rye', serif;
+  color: white;
 }
 
 p{
@@ -41,6 +44,22 @@ p{
 .navbar-nav .nav-link {
   color: white !important;
 }
+
+.btn-outline-primary {
+  border-color: #631e19;
+  color: #631e19;
+}
+
+.btn-outline-primary:hover, .btn-check:active+.btn-outline-primary, .btn-check:checked+.btn-outline-primary, .btn-outline-primary.active, .btn-outline-primary.dropdown-toggle.show, .btn-outline-primary:active {
+  background-color: #631e19;
+  border-color: #631e19;
+}
+
+.btn-check:active+.btn-outline-primary:focus, .btn-check:checked+.btn-outline-primary:focus, .btn-outline-primary.active:focus, .btn-outline-primary.dropdown-toggle.show:focus, .btn-outline-primary:active:focus {
+  box-shadow: none;
+
+}
+
 
 main #main {
   margin: 0 !important;
