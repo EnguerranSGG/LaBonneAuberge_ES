@@ -19,6 +19,17 @@ namespace LaBonneAuberge.Data
                     return; // DB has been seeded
                 }
 
+                /*var users = new AspNetUsers[]
+                {
+                    new AspNetUsers { Id = "8aed5fd1-f09c-4cf3-b8a7-d5e44f058638", UserName = "george@admin.fr", NormalizedUserName = "GEORGE@ADMIN.FR", Email = "george@admin.fr", NormalizedEmail = "GEORGE@ADMIN.FR", EmailConfirmed= true, PasswordHash = "AQAAAAIAAYagAAAAEBTwUIoCDARQCWMTp2AihQGANLthCPMFQ8Dcnw5Z7Rk4YgExhLyt60BEX2gjjTC9ZA==", SecurityStamp="GXYR3E64DLSVMBBCFP3EPCJ2DUUZITBM", ConcurrencyStamp="1cba2b8d-2e95-46d4-879a-69c3f03e7468", LockoutEnd="1"},
+                };
+                
+                foreach (AspNetUsers u in users)
+                {
+                    context.AspNetUsers.Add(u);
+                }
+                context.SaveChanges();*/
+
                 var categories = new Category[]
                 {
                     new Category { Id = 1, Nom = "Entrées" },
