@@ -27,7 +27,9 @@ body {
   
 }
 
-
+.logo {
+  width: 20vw;
+}
 
 h3, h2, h1{
   font-family: 'Rye', serif;
