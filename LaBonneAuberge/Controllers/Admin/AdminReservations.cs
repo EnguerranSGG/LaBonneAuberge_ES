@@ -5,11 +5,13 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 using LaBonneAuberge.Data;
 using LaBonneAuberge.Models;
 
 namespace LaBonneAuberge
 {
+    [Authorize]
     public class AdminReservations : Controller
     {
         private readonly LaBonneAubergeContext _context;
