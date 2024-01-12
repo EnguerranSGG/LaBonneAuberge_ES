@@ -118,6 +118,15 @@ button.accept-policy {
   width: 10vw;
 }
 
+.resa {
+  color: #fff;
+  border: #ffffff 2px solid;
+}
+
+.resa:hover {
+  color: #ffffff;
+}
+
 @media (max-width: 575.98px) {
   .logo {
     width: 35vw;
