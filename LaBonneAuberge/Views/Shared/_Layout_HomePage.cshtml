@@ -176,6 +176,13 @@
             }
         };
     </script>
+    <script>
+
+        $(window).scroll(function(){
+            $(".Header_HomePage").css("opacity", 1 - $(window).scrollTop() / 390)
+        });
+
+    </script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 <script>
