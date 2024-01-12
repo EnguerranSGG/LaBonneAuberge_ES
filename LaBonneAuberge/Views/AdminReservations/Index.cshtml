@@ -43,9 +43,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.Anniversaire)
             </th>
-            <th>
+            @* <th>
                 @Html.DisplayNameFor(model => model.Fumeur)
-            </th>
+            </th> *@
             <th></th>
         </tr>
     </thead>
@@ -79,9 +79,9 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Anniversaire)
             </td>
-            <td>
+            @* <td>
                 @Html.DisplayFor(modelItem => item.Fumeur)
-            </td>
+            </td> *@
             <td>
                 <a class="link" asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                 <a class="link" asp-action="Delete" asp-route-id="@item.Id">Delete</a>

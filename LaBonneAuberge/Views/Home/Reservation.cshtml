@@ -1,4 +1,8 @@
 @{
+    Layout = "~/Views/Shared/_Layout_Reservation.cshtml";
+}
+
+@{
     ViewData["Title"] = "Reservation";
 }
 
@@ -139,8 +143,8 @@
                                 <input class="colorLabel" asp-for="Anniversaire" type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
                                 <label class="colorLabel" asp-for="Anniversaire" class="btn btn-outline-primary" for="btncheck1">Anniversaire</label>
 
-                                <input asp-for="Fumeur" type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
-                                <label asp-for="Fumeur" class="btn btn-outline-primary" for="btncheck2">Fumeur</label>
+                                @* <input asp-for="Fumeur" type="checkbox" class="btn-check" id="btncheck2" autocomplete="off"> *@
+                                @* <label asp-for="Fumeur" class="btn btn-outline-primary" for="btncheck2">Fumeur</label> *@
                             </div>
                             <div class="form-btn">
                                 <button class="submit-btn">Check availability</button>
