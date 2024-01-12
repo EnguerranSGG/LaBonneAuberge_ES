@@ -12,8 +12,8 @@
 <p>@TempData["SuccessMessage"]</p>
 }
 <style>
-    .marginleft{
-        margin-left: 5%;
+    .marginright{
+        margin-right: 5%;
       
     }
     .colorLabel{
@@ -25,7 +25,7 @@
             <div class="row">
                 <div class="col-md-7 col-md-push-5">
                     <div class="booking-cta">
-                        <h1 class="reservation ">Make your reservation</h1>
+                        <h1 class="reservation marginright ">Make your reservation</h1>
                         <p>
                             Réservez dès maintenant et <br>
                             laissez-nous vous offrir <br>
@@ -33,7 +33,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="col-md-4 col-md-pull-5 marginleft">
+                <div class="col-md-4 col-md-pull-5  mt-5">
                     <div class="booking-form">
                         <form asp-action="Reservation" method="post">
                             <div class="form-group">
