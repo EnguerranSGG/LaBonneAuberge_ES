@@ -1,6 +1,6 @@
 @{
-    Layout = "~/Views/Shared/_Layout_Reservation.cshtml";
-}
+    Layout = "~/Views/Shared/_Layout_Admin.cshtml";
+}  
 
 @model IEnumerable<LaBonneAuberge.Models.Menu>
 
@@ -8,10 +8,10 @@
     ViewData["Title"] = "Index";
 }
 <div class="gestion">
-    <h1 style="color: black;"></h1>Gestion des plats</h1>
+    <h1 style="color: black;">Gestion de la carte :</h1>
 
     <p>
-        <a class="link" asp-action="Create">Create New</a>
+        <a class="link" asp-action="Create">Ajouter quelque chose à la carte</a>
     </p>
 </div>
 <table class="table">

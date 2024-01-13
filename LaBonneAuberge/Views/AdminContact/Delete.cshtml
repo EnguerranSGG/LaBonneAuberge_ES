@@ -1,0 +1,35 @@
+@model LaBonneAuberge.Models.Contact
+
+@{
+    Layout = "~/Views/Shared/_Layout_Admin.cshtml";
+}
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div id="form_edition">
+    <h1>Suppression</h1>
+
+    <h3>T'es sûr que tu veux liquider ce plat?</h3>
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Message)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Message)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Supprimer" class="btn btn-danger" /> |
+        <a class="link" asp-action="Index">Retour à la liste</a>
+    </form>
+</div>

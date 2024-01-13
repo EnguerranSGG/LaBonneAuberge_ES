@@ -1,0 +1,43 @@
+@model IEnumerable<LaBonneAuberge.Models.Contact>
+
+@{
+    Layout = "~/Views/Shared/_Layout_Admin.cshtml";
+}    
+
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="gestion">
+<h1 style="color:black">Gestion des contacts :</h1>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Message)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Message)
+            </td>
+            <td> |
+                <a class="link" asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a class="link" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
