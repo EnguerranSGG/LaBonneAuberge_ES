@@ -7,6 +7,14 @@ html {
     font-size: 16px;
   }
 }
+@media (max-width: 991px) {
+  /* Styles à appliquer lorsque la largeur de l'écran est inférieure à 991 pixels */
+  .columnAll {
+    display: flex;
+    flex-direction: column;
+    width:100%;
+  }
+}
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
   box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #cecece;
@@ -118,4 +126,15 @@ main #main {
   align-items: left;
   margin: 1%;
   width: 50vw;
+}
+.video{
+  display: flex;
+  justify-content: center;
+  
+}
+.borderVideo{
+  border: 10px solid #ccc;
+  background-image: url(/img/assiette2.png);
+  border-image: url(/img/BorderWood-min.png)120;
+  min-width: 480px;
 }
